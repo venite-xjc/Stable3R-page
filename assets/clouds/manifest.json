@@ -1,0 +1,274 @@
+{
+  "schema": "stable3r_interactive_clouds_v1",
+  "status": "PASS",
+  "source": "fresh common-input comparison, not a paper-wide aggregate",
+  "scene_selection": "Three selected illustrative structural examples; advantages are scene-specific, not universal.",
+  "same_render_settings": true,
+  "auto_rotation": false,
+  "performance_claim": false,
+  "scenes": [
+    {
+      "id": "complete-kitchen",
+      "title": "Kitchen structure",
+      "dataset": "nrgbd",
+      "scene": "complete_kitchen",
+      "frames": 13,
+      "frame_ids": [
+        "complete_kitchen/0",
+        "complete_kitchen/100",
+        "complete_kitchen/200",
+        "complete_kitchen/300",
+        "complete_kitchen/400",
+        "complete_kitchen/500",
+        "complete_kitchen/600",
+        "complete_kitchen/700",
+        "complete_kitchen/800",
+        "complete_kitchen/900",
+        "complete_kitchen/1000",
+        "complete_kitchen/1100",
+        "complete_kitchen/1200"
+      ],
+      "source_run": "homepage_common_input_v1",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "47e53da2a32343f90029055e62e393b89206e85e9f3b1f187951d64aea085253",
+      "same_input_file_sha256": "f697df0c129aa255e0794ab5e927f1b9c8a369ca72a4ee4ac61c83b50fa6bf85",
+      "rgb_canonical_max_abs": 0.0,
+      "gt_max_abs": 0.0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.022287003672200784,
+          "comp": 0.016391450338663075,
+          "nc": 0.8966909551155668,
+          "acc_med": 0.01361756898352888,
+          "comp_med": 0.01056823593521013,
+          "nc_med": 0.9885339871767042,
+          "nc1": 0.9044103791190157,
+          "nc2": 0.8889715311121179,
+          "nc1_med": 0.9891987620813956,
+          "nc2_med": 0.9878692122720127
+        },
+        "streamvggt": {
+          "acc": 0.16217333255560065,
+          "comp": 0.10103175165827416,
+          "nc": 0.7175528633582623,
+          "acc_med": 0.1356186776939166,
+          "comp_med": 0.06184402725058831,
+          "nc_med": 0.9470074280367908,
+          "nc1": 0.7200390349724418,
+          "nc2": 0.7150666917440828,
+          "nc1_med": 0.9501653947665385,
+          "nc2_med": 0.9438494613070432
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "73697b9a9a67ce07a27026c67fc17226d1d5a4bb5e6522ef0fe563c59fc76470",
+          "metrics_sha256": "4f58f2ae1fcb26df3bff0c5ff5f8b453a1a12d29ebbbad3c8ad042b7fc4628ae",
+          "payload_sha256": "c26ea65865a09e074e1f69161dc89e58ff92e052b7b925101297ca322692bb6e",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "77461c60a77709f3ea7edf7225df835b37c9525b2c55b4b424db8d2e23d51725",
+          "metrics_sha256": "53c867737d82659a6594794986f5d07b8d0192c7b848c1f32616710eef109559",
+          "payload_sha256": "936038b01704d94b18f5d114ed08b83c4701b80ec0cb69bf835b0af6510a8ae6",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "complete-kitchen.js",
+      "asset_sha256": "6700624e30af23740e3825fb20a323e57782c523277a543b42a6a11171b8dde8",
+      "display": {
+        "point_count": 108715,
+        "common_valid_point_count": 652288,
+        "same_pixel_stride": 6,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
+    },
+    {
+      "id": "stairs",
+      "title": "Staircase geometry",
+      "dataset": "7scenes",
+      "scene": "stairs/seq-01",
+      "frames": 13,
+      "frame_ids": [
+        "stairs/seq-01/000000",
+        "stairs/seq-01/000040",
+        "stairs/seq-01/000080",
+        "stairs/seq-01/000120",
+        "stairs/seq-01/000160",
+        "stairs/seq-01/000200",
+        "stairs/seq-01/000240",
+        "stairs/seq-01/000280",
+        "stairs/seq-01/000320",
+        "stairs/seq-01/000360",
+        "stairs/seq-01/000400",
+        "stairs/seq-01/000440",
+        "stairs/seq-01/000480"
+      ],
+      "source_run": "homepage_common_input_v1",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "d71d1a82304ae6c3148a225686ba03d958f0f2b77bc254798c820234d75e2ac2",
+      "same_input_file_sha256": "762c30cfb7a9a460f657eb90215159079321ebcfabdfebd1f979ac508f32aa49",
+      "rgb_canonical_max_abs": 0.0,
+      "gt_max_abs": 0.0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.03999207932748761,
+          "comp": 0.03761893925468957,
+          "nc": 0.7485992552644092,
+          "acc_med": 0.027646693815892038,
+          "comp_med": 0.021319257705028138,
+          "nc_med": 0.8846645452221742,
+          "nc1": 0.7660785659320911,
+          "nc2": 0.7311199445967272,
+          "nc1_med": 0.9042337975965091,
+          "nc2_med": 0.8650952928478393
+        },
+        "streamvggt": {
+          "acc": 0.11840700136358788,
+          "comp": 0.10247408088461885,
+          "nc": 0.6472763172445739,
+          "acc_med": 0.07299957112085484,
+          "comp_med": 0.03221605085483393,
+          "nc_med": 0.7565915905093455,
+          "nc1": 0.6523812452415152,
+          "nc2": 0.6421713892476326,
+          "nc1_med": 0.7678872886166723,
+          "nc2_med": 0.7452958924020188
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "aa7611f8bbfd8c1e066449b1b9785368a55b1639ba0787a6acfb9bf70baf1d76",
+          "metrics_sha256": "1e9a09b960668bd6eb3e524ba463fa90522406ab871596dd6fb264171168c9bf",
+          "payload_sha256": "de705167acdb09765541b65cbaf4820065c7e39d38df05119bca05be9a24ebfa",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "e5edc21a76fd36c89d2271b7b292e290a8aa8d065c21dd4330268c8659626a64",
+          "metrics_sha256": "3a05c444d4c099a8d66a7517921bae566577a191b0edefbaf834650ab5c541cc",
+          "payload_sha256": "adb0b43d2f08804de48e5db6dd1bdae2926a6f501f555de3b8b2baf962dd3fd3",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "stairs.js",
+      "asset_sha256": "fb444685d0d9b41cbd3c5bea0ec03c0e8f6d43d20536008ccd01788dbf838232",
+      "display": {
+        "point_count": 95587,
+        "common_valid_point_count": 573521,
+        "same_pixel_stride": 6,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
+    },
+    {
+      "id": "grey-room",
+      "title": "Room surfaces",
+      "dataset": "nrgbd",
+      "scene": "grey_white_room",
+      "frames": 15,
+      "frame_ids": [
+        "grey_white_room/0",
+        "grey_white_room/100",
+        "grey_white_room/200",
+        "grey_white_room/300",
+        "grey_white_room/400",
+        "grey_white_room/500",
+        "grey_white_room/600",
+        "grey_white_room/700",
+        "grey_white_room/800",
+        "grey_white_room/900",
+        "grey_white_room/1000",
+        "grey_white_room/1100",
+        "grey_white_room/1200",
+        "grey_white_room/1300",
+        "grey_white_room/1400"
+      ],
+      "source_run": "homepage_common_input_v1",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "86b5f17420b17b9d8b1f2820cf7bfbf3b230aa0c8d6714c9609868f90cce78e9",
+      "same_input_file_sha256": "4441e1a8eda6b6e8daf50fbd07ca09d33ddc6871a83c5dc015b1b3d43ffcae39",
+      "rgb_canonical_max_abs": 0.0,
+      "gt_max_abs": 0.0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.020788184334563548,
+          "comp": 0.015528775085071316,
+          "nc": 0.8971178262625877,
+          "acc_med": 0.015718808304178048,
+          "comp_med": 0.009905744337925737,
+          "nc_med": 0.9851035188967003,
+          "nc1": 0.8964910201598497,
+          "nc2": 0.8977446323653258,
+          "nc1_med": 0.9855524319651944,
+          "nc2_med": 0.9846546058282063
+        },
+        "streamvggt": {
+          "acc": 0.16792464751911973,
+          "comp": 0.15297400931318825,
+          "nc": 0.7928977064375362,
+          "acc_med": 0.08932269664290916,
+          "comp_med": 0.058091811974852275,
+          "nc_med": 0.9756760741556185,
+          "nc1": 0.7959678854291297,
+          "nc2": 0.7898275274459428,
+          "nc1_med": 0.9803292610694765,
+          "nc2_med": 0.9710228872417604
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "ea44bc7f16923b7603fb28f87ddd9469c21a467a2bfe258a018bce310409bee3",
+          "metrics_sha256": "3e4cc731d84186ad92d3f74b19002cc1528ef8b968e37509683c0f53ff266005",
+          "payload_sha256": "dbbad3b08b126e32ead6d42e23c9ee8e7d968a077db90fe086362c6e09f4f4b5",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "685650c64ab02b649e2c8c7fb01d32d8ace8fdace7d86aa322bd8c3571b7706e",
+          "metrics_sha256": "63dd6e06d7f409384c86b93c60aceb424cc7748614a06bb82e1103415da17f99",
+          "payload_sha256": "16f2af55311c63a261ae1099a100a258a09b94d1072204d1e2f31090804d17f7",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "grey-room.js",
+      "asset_sha256": "5e9d3f107aa82f3e3da7eec363c937ee92cd0ce8c848b383735fb7c22cd15789",
+      "display": {
+        "point_count": 103224,
+        "common_valid_point_count": 722565,
+        "same_pixel_stride": 7,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
+    }
+  ],
+  "source_identity_sha256": "2aa5bcad0a755217f14edc25b640f0ee31ba850d9ad692009b7881c7d77ea43e",
+  "error_color_range_m": [
+    0,
+    0.1
+  ],
+  "metric_alignment": "per-method Sim3 and ICP using identical settings"
+}

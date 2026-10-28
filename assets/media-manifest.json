@@ -1,0 +1,122 @@
+{
+  "archive": "Stable3R_iclr.zip",
+  "archive_sha256": "78cc14509ea4b3fa0599fb90656dc1e4f7c6dd79e399d5e83278d692c21e4d82",
+  "figures": [
+    {
+      "asset": "probe",
+      "paper_label": "fig:teaser (a)",
+      "source": "image/teaser_cropped.pdf",
+      "source_sha256": "07957ee08315e60a9a5b5cb69e3d7163df721acf89cfead2ca051a7f9dc9723c",
+      "webp_sha256": "da466006010814e8ebbecc7bf54d77703de4ec377029950b474401f4611d04a1",
+      "width": 1152,
+      "height": 848,
+      "crop_pixels_at_3200_render": [
+        0,
+        0,
+        1152,
+        848
+      ],
+      "content_modified": false
+    },
+    {
+      "asset": "pipeline",
+      "paper_label": "fig:pipeline",
+      "source": "image/pipeline_cropped.pdf",
+      "source_sha256": "156d5e4ebc202a5f20622583b86795a271b356526bf6f68c78a55fda945a1489",
+      "webp_sha256": "d68668adf71c2c11710a2970dc1bcfc16edc0025a901c79341d2a3a9242bf919",
+      "width": 3200,
+      "height": 1090,
+      "crop_pixels_at_3200_render": null,
+      "content_modified": false
+    },
+    {
+      "asset": "reconstruction",
+      "paper_label": "fig:expetiment1",
+      "source": "image/ex1.4_cropped.pdf",
+      "source_sha256": "06658a2c7f801be11a22bf11a292dbd41c8ac8ba89d63feb60159a70ad974430",
+      "webp_sha256": "9b4962af488239184ec7472d63f39aa448ce5093a7447acbfe9592dd1ef2cb8a",
+      "width": 3200,
+      "height": 2142,
+      "crop_pixels_at_3200_render": null,
+      "content_modified": false
+    },
+    {
+      "asset": "trajectories",
+      "paper_label": "fig:expetiment2",
+      "source": "image/ex2.4_cropped.pdf",
+      "source_sha256": "b9542fc55994ba5c7053b8922ae65ef3d9e1988cc99e424c3ae04e0d76109779",
+      "webp_sha256": "ae87416cee4024d572d55cedf3acbf16815756a4741e1dc45bd8df2f33284912",
+      "width": 3200,
+      "height": 1342,
+      "crop_pixels_at_3200_render": null,
+      "content_modified": false
+    },
+    {
+      "asset": "parallel-attention",
+      "paper_label": "fig:flashattention",
+      "source": "image/flashattention_cropped.pdf",
+      "source_sha256": "ed8786cbccc26f1216769ae65687a8bd4cad024b081c9abebfbadd0636a7408a",
+      "webp_sha256": "f5713798787d821df7d64df2fdbe66a5b9dd178ff45390c44d2079622a43a5ac",
+      "width": 3200,
+      "height": 824,
+      "crop_pixels_at_3200_render": null,
+      "content_modified": false
+    }
+  ],
+  "metrics_origin": "Manuscript tables with verified publication corrections; not new evaluations",
+  "animations": false,
+  "author_names": "Not displayed: source contains template names",
+  "tables": {
+    "numeric_values": 333,
+    "source_files": {
+      "table/short_exp.tex": "fac514afa7a5b5b3d41dec2be465351a6637b46c6f06d6637db36ba9b6878149",
+      "body/4.experiments.tex": "57f6f2e864770b5dcddff66ac207089557055bfd09312e3aae8382e7e4236c29"
+    },
+    "notes": [
+      "Pose dataset headers are corrected to Sintel, TUM-dynamics, and ScanNet; all underlying pose values are unchanged.",
+      "LingBot-Map NRGBD NC is corrected to mean 0.618 and median 0.693, verified against the original nine-scene 300-frame evaluation log.",
+      "The teaser's reconstruction bars differ from the active reconstruction table. Only the probe panel is displayed; numeric tables use the active TeX rows with the explicitly recorded publication corrections.",
+      "Long results are the manuscript's 300-frame experiment. Direct full-history inference and FrameVGGT* (16 mid-memory frames + 4 sparse anchors) are labeled separately."
+    ],
+    "publication_corrections": [
+      {
+        "date": "2026-10-28",
+        "id": "pose_dataset_headers",
+        "before": [
+          "TUM-dynamics",
+          "Sintel",
+          "ScanNet"
+        ],
+        "after": [
+          "Sintel",
+          "TUM-dynamics",
+          "ScanNet"
+        ],
+        "evidence": "Author-confirmed camera-ready correction; numeric pose columns unchanged."
+      },
+      {
+        "date": "2026-10-28",
+        "id": "lingbot_map_nrgbd_nc",
+        "before": [
+          "0.693",
+          null
+        ],
+        "after": [
+          "0.618",
+          "0.693"
+        ],
+        "evidence": "Original LingBot-Map NRGBD 300-frame evaluation, nine scenes.",
+        "source_log_sha256": "e6e75dd3bfd2670b760d528e7277f75d83c5c45b8fea0e99c3d1222b5f7bae66",
+        "verified_mean": 0.6177669680233757,
+        "verified_median": 0.6930790303752603
+      },
+      {
+        "date": "2026-10-28",
+        "id": "framevggt_strategy_label",
+        "before": "Stable3R (w/ FERM)",
+        "after": "Stable3R (w/ FrameVGGT*)",
+        "evidence": "Author-confirmed strategy naming; same reported values, 16-frame mid-memory and 4 sparse anchors."
+      }
+    ]
+  }
+}

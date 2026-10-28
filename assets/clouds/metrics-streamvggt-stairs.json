@@ -1,0 +1,30 @@
+{
+  "model": "streamvggt",
+  "scene": "stairs",
+  "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59",
+  "input_file_sha256": "762c30cfb7a9a460f657eb90215159079321ebcfabdfebd1f979ac508f32aa49",
+  "semantic_input_sha256": "d71d1a82304ae6c3148a225686ba03d958f0f2b77bc254798c820234d75e2ac2",
+  "resolution_wh": [
+    518,
+    392
+  ],
+  "precision": "bf16",
+  "memory": "full",
+  "metrics": {
+    "acc": 0.11840700136358788,
+    "comp": 0.10247408088461885,
+    "nc": 0.6472763172445739,
+    "acc_med": 0.07299957112085484,
+    "comp_med": 0.03221605085483393,
+    "nc_med": 0.7565915905093455,
+    "nc1": 0.6523812452415152,
+    "nc2": 0.6421713892476326,
+    "nc1_med": 0.7678872886166723,
+    "nc2_med": 0.7452958924020188
+  },
+  "frame_count": 13,
+  "source_identity_sha256": "2aa5bcad0a755217f14edc25b640f0ee31ba850d9ad692009b7881c7d77ea43e",
+  "performance_claim": false,
+  "payload_sha256": "adb0b43d2f08804de48e5db6dd1bdae2926a6f501f555de3b8b2baf962dd3fd3",
+  "alignment": "same correspondence Sim3 + 0.1m point-to-point ICP"
+}

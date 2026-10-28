@@ -1,0 +1,30 @@
+{
+  "model": "stable3r",
+  "scene": "complete-kitchen",
+  "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567",
+  "input_file_sha256": "f697df0c129aa255e0794ab5e927f1b9c8a369ca72a4ee4ac61c83b50fa6bf85",
+  "semantic_input_sha256": "47e53da2a32343f90029055e62e393b89206e85e9f3b1f187951d64aea085253",
+  "resolution_wh": [
+    518,
+    392
+  ],
+  "precision": "bf16",
+  "memory": "full",
+  "metrics": {
+    "acc": 0.022287003672200784,
+    "comp": 0.016391450338663075,
+    "nc": 0.8966909551155668,
+    "acc_med": 0.01361756898352888,
+    "comp_med": 0.01056823593521013,
+    "nc_med": 0.9885339871767042,
+    "nc1": 0.9044103791190157,
+    "nc2": 0.8889715311121179,
+    "nc1_med": 0.9891987620813956,
+    "nc2_med": 0.9878692122720127
+  },
+  "frame_count": 13,
+  "source_identity_sha256": "2aa5bcad0a755217f14edc25b640f0ee31ba850d9ad692009b7881c7d77ea43e",
+  "performance_claim": false,
+  "payload_sha256": "c26ea65865a09e074e1f69161dc89e58ff92e052b7b925101297ca322692bb6e",
+  "alignment": "same correspondence Sim3 + 0.1m point-to-point ICP"
+}

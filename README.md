@@ -20,6 +20,16 @@ node --check clouds.js
 node scripts/verify-site.mjs
 ```
 
+## Paper masthead
+
+The header lists the five authors in the order shown on https://venite-xjc.github.io/,
+with affiliations and the corresponding-author mark supplied by the authors.
+Verified personal links are provided for Jincheng Xiong and Ming Qian; Hang Zhang
+links to the OpenReview profile referenced by that homepage. No unconfirmed
+same-name profiles are linked. Resource buttons are intentionally disabled until
+their destinations are provided. Their embedded icons are credited in
+`assets/icons/SOURCES.txt`. The Abstract is visible without interaction.
+
 ## Publication corrections (2026-10-28)
 
 - Camera-pose columns are labeled **Sintel, TUM-dynamics, ScanNet**, in that order. Numeric pose values are unchanged.

@@ -11,11 +11,17 @@ const sha = file => createHash('sha256').update(readFileSync(join(root, file))).
 const data = json('assets/paper/results.json');
 const media = json('assets/media-manifest.json');
 const html = read('index.html');
+const authorLinks = [
+  'https://venite-xjc.github.io/',
+  'https://openreview.net/profile?id=~Hang_Zhang22',
+  'https://qianmingduowan.github.io/'
+];
 assert(existsSync(join(root, '.nojekyll')));
 assert.equal(html.match(/<img\b/g).length, 5);
 assert.equal(html.match(/<canvas\b/g).length, 3);
 for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
   const ref = match[1];
+  if (authorLinks.includes(ref)) continue; // Outbound profiles, not runtime dependencies.
   if (ref.startsWith('#')) {
     assert(html.includes(`id="${ref.slice(1)}"`), `Broken anchor ${ref}`);
     continue;
@@ -23,6 +29,15 @@ for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
   assert(!/^(?:\/|[a-z]+:)/i.test(ref), `Non-relative asset ${ref}`);
   assert(existsSync(join(root, ref)), `Missing asset ${ref}`);
 }
+assert.equal(html.match(/class="resource-button" type="button" disabled/g).length, 3);
+assert.equal(html.match(/<svg aria-hidden="true" focusable="false"/g).length, 3);
+assert(!html.includes('Explore in 3D') && !html.includes('How it works'));
+assert(html.includes('<p class="paper-title">Streaming 3D Reconstruction with Stable Geometric References</p>'));
+assert(html.includes('<p class="venue">NeurIPS 2026</p>'));
+assert(html.includes('<section class="abstract" id="abstract" aria-labelledby="abstract-title">'));
+assert(html.includes('<h2 id="abstract-title">Abstract</h2>'));
+assert(!html.includes('<summary>Abstract</summary>'));
+assert(html.includes('Ming Qian</a><sup>2,†</sup>'));
 for (const match of html.matchAll(/srcset="([^"]+)"/g)) {
   for (const item of match[1].split(',')) assert(existsSync(join(root, item.trim().split(/\s+/)[0])));
 }
@@ -76,4 +91,4 @@ function inspect(dir) {
   }
 }
 inspect(root);
-console.log(JSON.stringify({status:'PASS',numericValues:333,corrections:3,figures:5,pointCloudScenes:3,relativeAssets:true,rawCloudMetricsUnchanged:true}));
+console.log(JSON.stringify({status:'PASS',numericValues:333,corrections:3,figures:5,pointCloudScenes:3,relativeAssets:true,rawCloudMetricsUnchanged:true,authorLinks:3,resourceLinksUnset:true,abstractDefaultVisible:true}));

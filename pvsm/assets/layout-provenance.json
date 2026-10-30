@@ -1,0 +1,13 @@
+{
+  "edition": "PVSM-inspired alternative",
+  "created": "2026-10-30",
+  "design_reference": "https://wuzirui.github.io/pvsm-web/",
+  "reference_usage": "Visual structure only; original HTML/CSS/JS implementation; no reference research media or numerical claims reused",
+  "stable3r_content_base_commit": "020e194a3c33dca4fc94d4177f8c594c361512ae",
+  "paper_and_cloud_assets": "Unmodified verified Stable3R release assets, with source hashes in their existing manifests",
+  "animations": false,
+  "model_or_evaluation_runs": false,
+  "resource_destinations": "Unset, disabled buttons",
+  "original_homepage": "https://venite-xjc.github.io/Stable3R-page/",
+  "alternate_path": "/Stable3R-page/pvsm/"
+}

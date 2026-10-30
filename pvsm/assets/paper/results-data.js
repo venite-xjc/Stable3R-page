@@ -1,0 +1,572 @@
+window.STABLE3R_PAPER_RESULTS = {
+  "source_archive_sha256": "78cc14509ea4b3fa0599fb90656dc1e4f7c6dd79e399d5e83278d692c21e4d82",
+  "numeric_origin": "supplied_manuscript_with_verified_corrections",
+  "reconstruction": {
+    "sparse": {
+      "datasets": [
+        "NRGBD",
+        "7-Scenes",
+        "TUM-dynamics"
+      ],
+      "rows": [
+        {
+          "method": "CUT3R",
+          "paper_method": "CUT3R",
+          "values": [
+            "0.096",
+            "0.048",
+            "0.084",
+            "0.043",
+            "0.822",
+            "0.963",
+            "0.084",
+            "0.056",
+            "0.097",
+            "0.056",
+            "0.698",
+            "0.787",
+            "0.148",
+            "0.099",
+            "0.095",
+            "0.049",
+            "0.643",
+            "0.718"
+          ]
+        },
+        {
+          "method": "TTT3R",
+          "paper_method": "TTT3R",
+          "values": [
+            "0.100",
+            "0.055",
+            "0.085",
+            "0.049",
+            "0.820",
+            "0.960",
+            "0.088",
+            "0.059",
+            "0.125",
+            "0.077",
+            "0.694",
+            "0.783",
+            "0.148",
+            "0.096",
+            "0.096",
+            "0.050",
+            "0.646",
+            "0.721"
+          ]
+        },
+        {
+          "method": "StreamVGGT",
+          "paper_method": "StreamVGGT",
+          "values": [
+            "0.085",
+            "0.044",
+            "0.079",
+            "0.038",
+            "0.862",
+            "0.986",
+            "0.132",
+            "0.058",
+            "0.116",
+            "0.042",
+            "0.749",
+            "0.863",
+            "0.126",
+            "0.060",
+            "0.070",
+            "0.036",
+            "0.714",
+            "0.820"
+          ]
+        },
+        {
+          "method": "LongStream",
+          "paper_method": "LongStream",
+          "values": [
+            "0.091",
+            "0.063",
+            "0.106",
+            "0.078",
+            "0.814",
+            "0.956",
+            "0.068",
+            "0.045",
+            "0.069",
+            "0.041",
+            "0.738",
+            "0.843",
+            "0.080",
+            "0.032",
+            "0.060",
+            "0.031",
+            "0.709",
+            "0.816"
+          ]
+        },
+        {
+          "method": "Stable3R",
+          "paper_method": "Ours",
+          "values": [
+            "0.035",
+            "0.020",
+            "0.041",
+            "0.023",
+            "0.872",
+            "0.987",
+            "0.052",
+            "0.032",
+            "0.069",
+            "0.048",
+            "0.743",
+            "0.847",
+            "0.079",
+            "0.045",
+            "0.051",
+            "0.028",
+            "0.707",
+            "0.805"
+          ]
+        }
+      ],
+      "source": "table/short_exp.tex",
+      "label": "tab:short_eval"
+    },
+    "mid": {
+      "datasets": [
+        "NRGBD",
+        "7-Scenes",
+        "TUM-dynamics"
+      ],
+      "rows": [
+        {
+          "method": "CUT3R",
+          "paper_method": "CUT3R",
+          "values": [
+            "0.080",
+            "0.046",
+            "0.053",
+            "0.025",
+            "0.820",
+            "0.958",
+            "0.025",
+            "0.013",
+            "0.032",
+            "0.012",
+            "0.702",
+            "0.807",
+            "0.106",
+            "0.049",
+            "0.057",
+            "0.020",
+            "0.577",
+            "0.615"
+          ]
+        },
+        {
+          "method": "TTT3R",
+          "paper_method": "TTT3R",
+          "values": [
+            "0.087",
+            "0.049",
+            "0.055",
+            "0.028",
+            "0.808",
+            "0.948",
+            "0.040",
+            "0.021",
+            "0.038",
+            "0.013",
+            "0.687",
+            "0.789",
+            "0.102",
+            "0.049",
+            "0.051",
+            "0.019",
+            "0.580",
+            "0.620"
+          ]
+        },
+        {
+          "method": "StreamVGGT",
+          "paper_method": "StreamVGGT",
+          "values": [
+            "0.079",
+            "0.055",
+            "0.059",
+            "0.032",
+            "0.846",
+            "0.983",
+            "0.045",
+            "0.026",
+            "0.035",
+            "0.016",
+            "0.716",
+            "0.826",
+            "0.091",
+            "0.046",
+            "0.042",
+            "0.014",
+            "0.633",
+            "0.711"
+          ]
+        },
+        {
+          "method": "LongStream",
+          "paper_method": "LongStream",
+          "values": [
+            "0.078",
+            "0.050",
+            "0.052",
+            "0.024",
+            "0.836",
+            "0.975",
+            "0.030",
+            "0.019",
+            "0.027",
+            "0.013",
+            "0.720",
+            "0.832",
+            "0.072",
+            "0.024",
+            "0.045",
+            "0.012",
+            "0.615",
+            "0.682"
+          ]
+        },
+        {
+          "method": "Stable3R",
+          "paper_method": "Ours",
+          "values": [
+            "0.022",
+            "0.014",
+            "0.020",
+            "0.010",
+            "0.884",
+            "0.987",
+            "0.019",
+            "0.010",
+            "0.022",
+            "0.010",
+            "0.722",
+            "0.834",
+            "0.048",
+            "0.015",
+            "0.031",
+            "0.011",
+            "0.626",
+            "0.697"
+          ]
+        }
+      ],
+      "source": "table/short_exp.tex",
+      "label": "tab:short_eval"
+    },
+    "long": {
+      "datasets": [
+        "7-Scenes",
+        "NRGBD"
+      ],
+      "rows": [
+        {
+          "method": "CUT3R",
+          "paper_method": "CUT3R",
+          "values": [
+            "0.107",
+            "0.072",
+            "0.061",
+            "0.014",
+            "0.543",
+            "0.563",
+            "0.139",
+            "0.100",
+            "0.097",
+            "0.036",
+            "0.580",
+            "0.626"
+          ]
+        },
+        {
+          "method": "TTT3R",
+          "paper_method": "TTT3R",
+          "values": [
+            "0.035",
+            "0.021",
+            "0.023",
+            "0.004",
+            "0.567",
+            "0.603",
+            "0.100",
+            "0.056",
+            "0.048",
+            "0.024",
+            "0.604",
+            "0.670"
+          ]
+        },
+        {
+          "method": "LongStream",
+          "paper_method": "LongStream",
+          "values": [
+            "0.077",
+            "0.047",
+            "0.030",
+            "0.006",
+            "0.568",
+            "0.605",
+            "0.119",
+            "0.082",
+            "0.028",
+            "0.006",
+            "0.630",
+            "0.726"
+          ]
+        },
+        {
+          "method": "InfiniteVGGT",
+          "paper_method": "InfiniteVGGT",
+          "values": [
+            "0.041",
+            "0.021",
+            "0.026",
+            "0.005",
+            "0.565",
+            "0.599",
+            "0.067",
+            "0.044",
+            "0.022",
+            "0.004",
+            "0.634",
+            "0.730"
+          ]
+        },
+        {
+          "method": "OVGGT",
+          "paper_method": "OVGGT",
+          "values": [
+            "0.028",
+            "0.012",
+            "0.020",
+            "0.004",
+            "0.576",
+            "0.617",
+            "0.033",
+            "0.023",
+            "0.011",
+            "0.003",
+            "0.641",
+            "0.738"
+          ]
+        },
+        {
+          "method": "FrameVGGT*",
+          "paper_method": "FrameVGGT*",
+          "values": [
+            "0.029",
+            "0.013",
+            "0.022",
+            "0.004",
+            "0.581",
+            "0.626",
+            "0.030",
+            "0.021",
+            "0.013",
+            "0.004",
+            "0.680",
+            "0.807"
+          ]
+        },
+        {
+          "method": "LingBot-Map",
+          "paper_method": "LingBot-Map",
+          "values": [
+            "0.019",
+            "0.009",
+            "0.018",
+            "0.003",
+            "0.571",
+            "0.609",
+            "0.025",
+            "0.016",
+            "0.007",
+            "0.002",
+            "0.618",
+            "0.693"
+          ]
+        },
+        {
+          "method": "Stable3R (w/ FrameVGGT*)",
+          "paper_method": "Ours",
+          "values": [
+            "0.020",
+            "0.010",
+            "0.014",
+            "0.003",
+            "0.572",
+            "0.610",
+            "0.029",
+            "0.018",
+            "0.009",
+            "0.003",
+            "0.627",
+            "0.707"
+          ]
+        },
+        {
+          "method": "Stable3R (direct)",
+          "paper_method": "Ours(direct)",
+          "values": [
+            "0.013",
+            "0.005",
+            "0.015",
+            "0.004",
+            "0.572",
+            "0.611",
+            "0.018",
+            "0.011",
+            "0.007",
+            "0.002",
+            "0.645",
+            "0.738"
+          ]
+        }
+      ],
+      "source": "body/4.experiments.tex",
+      "label": "tab:long_seq_results"
+    }
+  },
+  "pose": {
+    "datasets": [
+      "Sintel",
+      "TUM-dynamics",
+      "ScanNet"
+    ],
+    "rows": [
+      {
+        "method": "CUT3R",
+        "paper_method": "CUT3R",
+        "values": [
+          "0.210",
+          "0.071",
+          "0.607",
+          "0.045",
+          "0.014",
+          "0.439",
+          "0.105",
+          "0.022",
+          "0.627"
+        ]
+      },
+      {
+        "method": "TTT3R",
+        "paper_method": "TTT3R",
+        "values": [
+          "0.209",
+          "0.082",
+          "0.683",
+          "0.029",
+          "0.013",
+          "0.380",
+          "0.072",
+          "0.021",
+          "0.805"
+        ]
+      },
+      {
+        "method": "StreamVGGT",
+        "paper_method": "StreamVGGT",
+        "values": [
+          "0.232",
+          "0.082",
+          "0.669",
+          "0.025",
+          "0.012",
+          "0.311",
+          "0.048",
+          "0.020",
+          "0.629"
+        ]
+      },
+      {
+        "method": "LongStream",
+        "paper_method": "LongStream",
+        "values": [
+          "0.194",
+          "0.076",
+          "0.604",
+          "0.036",
+          "0.014",
+          "0.366",
+          "0.037",
+          "0.014",
+          "0.431"
+        ]
+      },
+      {
+        "method": "Stable3R",
+        "paper_method": "Ours",
+        "values": [
+          "0.116",
+          "0.054",
+          "0.425",
+          "0.017",
+          "0.009",
+          "0.304",
+          "0.034",
+          "0.013",
+          "0.374"
+        ]
+      }
+    ],
+    "source": "body/4.experiments.tex",
+    "label": "tab:pose_evaluation"
+  },
+  "notes": [
+    "Pose dataset headers are corrected to Sintel, TUM-dynamics, and ScanNet; all underlying pose values are unchanged.",
+    "LingBot-Map NRGBD NC is corrected to mean 0.618 and median 0.693, verified against the original nine-scene 300-frame evaluation log.",
+    "The teaser's reconstruction bars differ from the active reconstruction table. Only the probe panel is displayed; numeric tables use the active TeX rows with the explicitly recorded publication corrections.",
+    "Long results are the manuscript's 300-frame experiment. Direct full-history inference and FrameVGGT* (16 mid-memory frames + 4 sparse anchors) are labeled separately."
+  ],
+  "publication_corrections": [
+    {
+      "date": "2026-10-28",
+      "id": "pose_dataset_headers",
+      "before": [
+        "TUM-dynamics",
+        "Sintel",
+        "ScanNet"
+      ],
+      "after": [
+        "Sintel",
+        "TUM-dynamics",
+        "ScanNet"
+      ],
+      "evidence": "Author-confirmed camera-ready correction; numeric pose columns unchanged."
+    },
+    {
+      "date": "2026-10-28",
+      "id": "lingbot_map_nrgbd_nc",
+      "before": [
+        "0.693",
+        null
+      ],
+      "after": [
+        "0.618",
+        "0.693"
+      ],
+      "evidence": "Original LingBot-Map NRGBD 300-frame evaluation, nine scenes.",
+      "source_log_sha256": "e6e75dd3bfd2670b760d528e7277f75d83c5c45b8fea0e99c3d1222b5f7bae66",
+      "verified_mean": 0.6177669680233757,
+      "verified_median": 0.6930790303752603
+    },
+    {
+      "date": "2026-10-28",
+      "id": "framevggt_strategy_label",
+      "before": "Stable3R (w/ FERM)",
+      "after": "Stable3R (w/ FrameVGGT*)",
+      "evidence": "Author-confirmed strategy naming; same reported values, 16-frame mid-memory and 4 sparse anchors."
+    }
+  ]
+};

@@ -1,0 +1,13 @@
+{
+  "edition": "GLD-inspired alternative",
+  "created": "2026-10-30",
+  "design_reference": "https://cvlab-kaist.github.io/GLD/",
+  "reference_usage": "Visual structure only; independently written layout and styling. No GLD figures, data, source code, Oral badge, or performance claims reused.",
+  "stable3r_content_base_commit": "acad72b5b6a417e4b4f0b31e565520fbdc8fd45f",
+  "paper_and_cloud_assets": "Unmodified verified Stable3R assets; existing manifests retain all original source identities",
+  "animations": false,
+  "model_or_evaluation_runs": false,
+  "resource_destinations": "Unset, disabled buttons",
+  "original_homepage": "https://venite-xjc.github.io/Stable3R-page/",
+  "alternate_path": "/Stable3R-page/gld/"
+}

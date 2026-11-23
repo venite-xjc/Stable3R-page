@@ -24,3 +24,9 @@ neurips-logo.svg is the original, unmodified SVG. The masthead displays it with
 a monochrome CSS mask in the site's warm accent color, alongside the 2026 year.
 The NeurIPS mark remains the property of its owner; no sponsor affiliation or
 conference presentation award is implied.
+
+Stable3R project favicon, created 2026-11-23:
+stable3r-mark.svg is an original, letter-free geometric reference mark. Its warm
+copper and ivory wireframe sits on charcoal, matching the main page palette.
+stable3r-mark-32.png is the 32px browser fallback rendered from that SVG.
+No third-party icon, font, or runtime dependency is used for the project mark.

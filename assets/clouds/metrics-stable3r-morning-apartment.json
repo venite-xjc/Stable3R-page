@@ -1,0 +1,30 @@
+{
+  "model": "stable3r",
+  "scene": "morning-apartment",
+  "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567",
+  "input_file_sha256": "1f17eefd410c27cc6c7c22ed709dc1161a7b53532189b25b672dc690b8e3b445",
+  "semantic_input_sha256": "24e6ee9ed9d870f9da65a6c79f09fe1ba820057509299d301bbeadef87cb5c69",
+  "resolution_wh": [
+    518,
+    392
+  ],
+  "precision": "bf16",
+  "memory": "full",
+  "metrics": {
+    "acc": 0.013601340541905928,
+    "comp": 0.010963496201449693,
+    "nc": 0.8526947065144665,
+    "acc_med": 0.007291986441321482,
+    "comp_med": 0.005879677096218771,
+    "nc_med": 0.985051891755429,
+    "nc1": 0.862511119717636,
+    "nc2": 0.8428782933112969,
+    "nc1_med": 0.9866115119250616,
+    "nc2_med": 0.9834922715857963
+  },
+  "frame_count": 10,
+  "source_identity_sha256": "211d1d7eae49f9f9019b57a669496416fb581a8e043c266ae5138750e891227b",
+  "performance_claim": false,
+  "payload_sha256": "e08c73447e57a8f1341cd5b5b5b4f308acd6759e12df1f42b9b70e42ae7821e3",
+  "alignment": "same correspondence Sim3 + 0.1m point-to-point ICP"
+}

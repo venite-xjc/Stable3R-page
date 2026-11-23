@@ -1,14 +1,12 @@
 {
   "sourceCommit": "d8c6e24ad19da9e47997f72b5e6e0e6aebfed525",
-  "description": "Original experiment assets and renderers, frozen before GLD root promotion. Presentation assets are validated separately.",
+  "description": "Original experiment assets and renderers frozen before GLD promotion, excluding the growable scene index. verify-clouds.mjs separately freezes the original three scene records.",
   "files": {
     "app.js": "03b4b3ba251a142f9c30e387b7d89fb74002db4775ed03bebaa2ecfd2c0f6841",
     "assets/clouds/complete-kitchen.jpg": "f7d03ddaca1573cb43ee2c2cbb015def514a25dcbb38d1c0a9713dd7c60ad642",
     "assets/clouds/complete-kitchen.js": "6700624e30af23740e3825fb20a323e57782c523277a543b42a6a11171b8dde8",
     "assets/clouds/grey-room.jpg": "c7a061c08fa9bee7d0813693a23d6fc64f614aa2946df6694f7139f7f04f2d31",
     "assets/clouds/grey-room.js": "5e9d3f107aa82f3e3da7eec363c937ee92cd0ce8c848b383735fb7c22cd15789",
-    "assets/clouds/manifest.js": "1dec4427c75f5411b5d3535474b118543144f83db02bd0730e45745ff88e51f2",
-    "assets/clouds/manifest.json": "986fd8594784e50157e7dbb55fcf72e795decf7fc4db8fc6efe29a14135e8bc0",
     "assets/clouds/metrics-stable3r-complete-kitchen.json": "4f58f2ae1fcb26df3bff0c5ff5f8b453a1a12d29ebbbad3c8ad042b7fc4628ae",
     "assets/clouds/metrics-stable3r-grey-room.json": "3e4cc731d84186ad92d3f74b19002cc1528ef8b968e37509683c0f53ff266005",
     "assets/clouds/metrics-stable3r-stairs.json": "1e9a09b960668bd6eb3e524ba463fa90522406ab871596dd6fb264171168c9bf",
@@ -37,5 +35,9 @@
     "assets/paper/trajectories.pdf": "b9542fc55994ba5c7053b8922ae65ef3d9e1988cc99e424c3ae04e0d76109779",
     "assets/paper/trajectories.webp": "ae87416cee4024d572d55cedf3acbf16815756a4741e1dc45bd8df2f33284912",
     "clouds.js": "85589815294bbd600ac6be98e69dbac659b22af2224bc6c905163b2b0b25413d"
+  },
+  "previousCloudManifestSha256": {
+    "json": "986fd8594784e50157e7dbb55fcf72e795decf7fc4db8fc6efe29a14135e8bc0",
+    "js": "1dec4427c75f5411b5d3535474b118543144f83db02bd0730e45745ff88e51f2"
   }
 }

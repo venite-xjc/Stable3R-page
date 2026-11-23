@@ -1,8 +1,8 @@
 {
   "schema": "stable3r_interactive_clouds_v1",
   "status": "PASS",
-  "source": "fresh common-input comparison, not a paper-wide aggregate",
-  "scene_selection": "Three selected illustrative structural examples; advantages are scene-specific, not universal.",
+  "source": "Six matched-input comparisons from two versioned runs, not a paper-wide aggregate",
+  "scene_selection": "Six selected illustrative examples; advantages are scene-specific, not universal.",
   "same_render_settings": true,
   "auto_rotation": false,
   "performance_claim": false,
@@ -37,8 +37,8 @@
       "memory": "full",
       "semantic_input_sha256": "47e53da2a32343f90029055e62e393b89206e85e9f3b1f187951d64aea085253",
       "same_input_file_sha256": "f697df0c129aa255e0794ab5e927f1b9c8a369ca72a4ee4ac61c83b50fa6bf85",
-      "rgb_canonical_max_abs": 0.0,
-      "gt_max_abs": 0.0,
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
       "same_gt_mask": true,
       "metrics": {
         "stable3r": {
@@ -122,8 +122,8 @@
       "memory": "full",
       "semantic_input_sha256": "d71d1a82304ae6c3148a225686ba03d958f0f2b77bc254798c820234d75e2ac2",
       "same_input_file_sha256": "762c30cfb7a9a460f657eb90215159079321ebcfabdfebd1f979ac508f32aa49",
-      "rgb_canonical_max_abs": 0.0,
-      "gt_max_abs": 0.0,
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
       "same_gt_mask": true,
       "metrics": {
         "stable3r": {
@@ -209,8 +209,8 @@
       "memory": "full",
       "semantic_input_sha256": "86b5f17420b17b9d8b1f2820cf7bfbf3b230aa0c8d6714c9609868f90cce78e9",
       "same_input_file_sha256": "4441e1a8eda6b6e8daf50fbd07ca09d33ddc6871a83c5dc015b1b3d43ffcae39",
-      "rgb_canonical_max_abs": 0.0,
-      "gt_max_abs": 0.0,
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
       "same_gt_mask": true,
       "metrics": {
         "stable3r": {
@@ -263,12 +263,270 @@
         "point_dtype": "float32",
         "metrics_use_full_cloud": true
       }
+    },
+    {
+      "id": "morning-apartment",
+      "title": "Apartment layout",
+      "dataset": "nrgbd",
+      "scene": "morning_apartment",
+      "frames": 10,
+      "frame_ids": [
+        "morning_apartment/0",
+        "morning_apartment/100",
+        "morning_apartment/200",
+        "morning_apartment/300",
+        "morning_apartment/400",
+        "morning_apartment/500",
+        "morning_apartment/600",
+        "morning_apartment/700",
+        "morning_apartment/800",
+        "morning_apartment/900"
+      ],
+      "source_run": "homepage_common_input_v2",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "24e6ee9ed9d870f9da65a6c79f09fe1ba820057509299d301bbeadef87cb5c69",
+      "same_input_file_sha256": "1f17eefd410c27cc6c7c22ed709dc1161a7b53532189b25b672dc690b8e3b445",
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.013601340541905928,
+          "comp": 0.010963496201449693,
+          "nc": 0.8526947065144665,
+          "acc_med": 0.007291986441321482,
+          "comp_med": 0.005879677096218771,
+          "nc_med": 0.985051891755429,
+          "nc1": 0.862511119717636,
+          "nc2": 0.8428782933112969,
+          "nc1_med": 0.9866115119250616,
+          "nc2_med": 0.9834922715857963
+        },
+        "streamvggt": {
+          "acc": 0.03602124264777991,
+          "comp": 0.03164256702717114,
+          "nc": 0.8492490251825957,
+          "acc_med": 0.022475914234014974,
+          "comp_med": 0.02108084292115539,
+          "nc_med": 0.98810891280648,
+          "nc1": 0.8431341294923501,
+          "nc2": 0.8553639208728412,
+          "nc1_med": 0.9860145103938833,
+          "nc2_med": 0.9902033152190768
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "2bd0b7743f23a6545a36b523c40bda2da85b8d41cdd3c84269ac8b21354e6833",
+          "metrics_sha256": "1d378b0f5c4df593d82a042f4bba47cbe76cdb514d704a073344e088bec6c42c",
+          "payload_sha256": "e08c73447e57a8f1341cd5b5b5b4f308acd6759e12df1f42b9b70e42ae7821e3",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "2ce3ffd621ff7dcbbac877a57acf5d9ede9bd8c046c0e7f0a0deecfd619954a5",
+          "metrics_sha256": "b790095863655fbfb6b42ce5447e99cabc4afdb5ad789fa77df6cf4f81b7616a",
+          "payload_sha256": "7f8ff70e02d47a59b0a2a2c9ce333ae249a98e1770d751eec52366b31719e3eb",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "morning-apartment.js",
+      "asset_sha256": "16538e2a50784c71d85327e0d03e04e2e2d1d99afb29380b76b0f438ea9f5eab",
+      "display": {
+        "point_count": 100352,
+        "common_valid_point_count": 501760,
+        "same_pixel_stride": 5,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
+    },
+    {
+      "id": "thin-geometry",
+      "title": "Thin structures",
+      "dataset": "nrgbd",
+      "scene": "thin_geometry",
+      "frames": 4,
+      "frame_ids": [
+        "thin_geometry/0",
+        "thin_geometry/100",
+        "thin_geometry/200",
+        "thin_geometry/300"
+      ],
+      "source_run": "homepage_common_input_v2",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "1c5f1f2653bf5f320f1a9db3a92e3ac7780f1e3cd4e2f7f4e3d207a3eb438640",
+      "same_input_file_sha256": "cc2c10e0966c022841d1c3365babb970131630fce1500ad158c22d478bd16799",
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.015329171780050109,
+          "comp": 0.007290323962650854,
+          "nc": 0.918244935420764,
+          "acc_med": 0.004616610628211421,
+          "comp_med": 0.00432956433135372,
+          "nc_med": 0.9949384485379364,
+          "nc1": 0.9019420353168983,
+          "nc2": 0.9345478355246297,
+          "nc1_med": 0.994820096703723,
+          "nc2_med": 0.99505680037215
+        },
+        "streamvggt": {
+          "acc": 0.04090470181787932,
+          "comp": 0.0277718815512877,
+          "nc": 0.9093095050581246,
+          "acc_med": 0.027627479468904825,
+          "comp_med": 0.020621536062835264,
+          "nc_med": 0.9888312562376055,
+          "nc1": 0.8995295744144483,
+          "nc2": 0.919089435701801,
+          "nc1_med": 0.9892878179215898,
+          "nc2_med": 0.9883746945536211
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "e17600b8d7b366eb593faad1667b06ab34c871d9492a11a857a7592e75380d51",
+          "metrics_sha256": "b75de7c3dd03095db091fd976ce93a5cbc9044d8c67ed7362dab84179cde8583",
+          "payload_sha256": "4a80c6727a450e4d6ffb8a6aa47d78d20a68d5e03e1c9fdf505a18dcb2060148",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "469d2fc319d79fde41c54f1513781dcd278bad70b1b54623f556cb02ff6aadb2",
+          "metrics_sha256": "421fc31274c42ee4183998dd3ea39b13c7b68ea3c1ca84bef969fb236301284a",
+          "payload_sha256": "3a4e29f8993fd33b43a8aa49a167553c115e67892523fcc3b0ecd4ccaeedf6b8",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "thin-geometry.js",
+      "asset_sha256": "1358751484adab0bbb07e6107a8730cb72094b7d64d6a3e285c7e3777dc7ccf7",
+      "display": {
+        "point_count": 72763,
+        "common_valid_point_count": 145525,
+        "same_pixel_stride": 2,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
+    },
+    {
+      "id": "office-workspace",
+      "title": "Office workspace",
+      "dataset": "7scenes",
+      "scene": "office/seq-06",
+      "frames": 25,
+      "frame_ids": [
+        "office/seq-06/000000",
+        "office/seq-06/000040",
+        "office/seq-06/000080",
+        "office/seq-06/000120",
+        "office/seq-06/000160",
+        "office/seq-06/000200",
+        "office/seq-06/000240",
+        "office/seq-06/000280",
+        "office/seq-06/000320",
+        "office/seq-06/000360",
+        "office/seq-06/000400",
+        "office/seq-06/000440",
+        "office/seq-06/000480",
+        "office/seq-06/000520",
+        "office/seq-06/000560",
+        "office/seq-06/000600",
+        "office/seq-06/000640",
+        "office/seq-06/000680",
+        "office/seq-06/000720",
+        "office/seq-06/000760",
+        "office/seq-06/000800",
+        "office/seq-06/000840",
+        "office/seq-06/000880",
+        "office/seq-06/000920",
+        "office/seq-06/000960"
+      ],
+      "source_run": "homepage_common_input_v2",
+      "resolution_wh": [
+        518,
+        392
+      ],
+      "precision": "bf16",
+      "memory": "full",
+      "semantic_input_sha256": "5e3f8a4468a52f71043a94087780c216f305e25e3ba4a66146b1d99004079290",
+      "same_input_file_sha256": "319035d8508577335b903964be9e79965c7936e579bbf4d40ad62058a2ba4dd6",
+      "rgb_canonical_max_abs": 0,
+      "gt_max_abs": 0,
+      "same_gt_mask": true,
+      "metrics": {
+        "stable3r": {
+          "acc": 0.022126768836801387,
+          "comp": 0.0209781165200751,
+          "nc": 0.7580215793390124,
+          "acc_med": 0.013952310740734232,
+          "comp_med": 0.011708382196514875,
+          "nc_med": 0.8826546865811797,
+          "nc1": 0.7771654463131402,
+          "nc2": 0.7388777123648846,
+          "nc1_med": 0.9027764328417978,
+          "nc2_med": 0.8625329403205618
+        },
+        "streamvggt": {
+          "acc": 0.0659495707386892,
+          "comp": 0.043789760066633335,
+          "nc": 0.7046773755893754,
+          "acc_med": 0.04050370776064785,
+          "comp_med": 0.022021358562237674,
+          "nc_med": 0.8264139640712076,
+          "nc1": 0.7133703039266938,
+          "nc2": 0.6959844472520571,
+          "nc1_med": 0.8446104796147096,
+          "nc2_med": 0.8082174485277055
+        }
+      },
+      "source_identities": {
+        "stable3r": {
+          "ply_sha256": "6dddd40286f7e1e8d02a8da03df1229fcaa98cbe7cd1cace7bbc241a012621a1",
+          "metrics_sha256": "b68c3c1dd40b8d4c39d577546e768daf104d20726f944ed766aa55a1473132ec",
+          "payload_sha256": "0af6f3c00351ee97f05f86b57b8eb42b77f383a3d3ddb89c5d588fe1ad6c4729",
+          "checkpoint_sha256": "47a5afa5c1fa61c89ab5843261a453259d676f932bf60b616f80d2000ac47567"
+        },
+        "streamvggt": {
+          "ply_sha256": "7961dc697da1e24f01119ea24857e26a9f7dcd6349d0222738803f9d762dd601",
+          "metrics_sha256": "4d49d2fb4f3304679daffee7523b30827b6ecaf437166391f41c3b7e6b0a0bf6",
+          "payload_sha256": "185e5d4a0a611a1b31ffc7d1fc4ae1cd94d98f17d855b10769685779bdf60ec8",
+          "checkpoint_sha256": "3d3d914d09609fdb485e16947c4885cca0e5ea4e5557598a3b3ffb1cfe0a2f59"
+        }
+      },
+      "asset": "office-workspace.js",
+      "asset_sha256": "2d10b1dad77c8831e2b10cb8ac86150fefc9cba49e49fb36bb394f1b0dbc451c",
+      "display": {
+        "point_count": 101023,
+        "common_valid_point_count": 1111249,
+        "same_pixel_stride": 11,
+        "sampling": "same original valid pixel/frame indices for both methods and GT; no confidence filter or denoising",
+        "normalization": "one shared GT center and scale; display only",
+        "point_dtype": "float32",
+        "metrics_use_full_cloud": true
+      }
     }
   ],
-  "source_identity_sha256": "2aa5bcad0a755217f14edc25b640f0ee31ba850d9ad692009b7881c7d77ea43e",
   "error_color_range_m": [
     0,
     0.1
   ],
-  "metric_alignment": "per-method Sim3 and ICP using identical settings"
+  "metric_alignment": "per-method Sim3 and ICP using identical settings",
+  "source_identity_sha256_by_run": {
+    "homepage_common_input_v1": "2aa5bcad0a755217f14edc25b640f0ee31ba850d9ad692009b7881c7d77ea43e",
+    "homepage_common_input_v2": "211d1d7eae49f9f9019b57a669496416fb581a8e043c266ae5138750e891227b"
+  }
 }

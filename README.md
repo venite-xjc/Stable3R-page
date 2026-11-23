@@ -47,9 +47,19 @@ The source archive and figure hashes remain in `assets/media-manifest.json`. The
 
 ## Interactive comparisons
 
-Three selected scenes compare Stable3R, StreamVGGT, and ground truth with matched RGB inputs, sampled pixels, viewing parameters, and error-color scales. Rotate, pan, or zoom any panel to synchronize all three views. There is no automatic animation.
+Six selected scenes compare Stable3R, StreamVGGT, and ground truth with matched RGB inputs, sampled pixels, viewing parameters, and error-color scales. Rotate, pan, or zoom any panel to synchronize all three views. There is no automatic animation.
 
-These are selected examples, not dataset-wide averages. The six scene-level metric JSON files are unchanged; hashes and comparison details are in `assets/clouds/manifest.json`. Paper table scores and point-cloud examples follow their respective, separately stated protocols.
+These are selected examples, not dataset-wide averages. The original three demos
+and their six raw metric files are unchanged. Three additional demos use fresh
+paired inference in `homepage_common_input_v2`: Apartment layout (10 frames),
+Thin structures (4 frames), and Office workspace (25 frames). Both models load
+the same frozen input object at 518×392, BF16 and full history. RGB, GT, masks,
+frame order and checkpoint identities are checked before export. Display sampling
+uses the same pixel indices; metrics use the full evaluated cloud. No confidence
+filter or denoising is applied. There are now twelve raw metric JSON files;
+their hashes and comparison details are in `assets/clouds/manifest.json`.
+Paper table scores and point-cloud examples follow their respective, separately
+stated protocols. No dataset-wide benchmark was rerun or changed.
 
 ## Main homepage layout
 

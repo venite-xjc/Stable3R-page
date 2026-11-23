@@ -3,6 +3,7 @@ import {readFileSync, readdirSync, lstatSync, existsSync} from 'node:fs';
 import {resolve, dirname, join, relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {verifyCloudAssets} from './verify-clouds.mjs';
 
 const root = resolve(process.argv[2] || join(dirname(fileURLToPath(import.meta.url)), '..'));
 const identities = JSON.parse(readFileSync(new URL('./content-identities.json', import.meta.url), 'utf8'));
@@ -124,7 +125,8 @@ assert.equal(data.publication_corrections.length,3);
 assert.deepEqual(data.publication_corrections,media.tables.publication_corrections);
 assert.deepEqual(JSON.parse(read('assets/paper/results-data.js').replace(/^window.STABLE3R_PAPER_RESULTS = /,'').trim().replace(/;$/,'')),data);
 for (const figure of media.figures) assert.equal(sha(join(root,`assets/paper/${figure.asset}.webp`)),figure.webp_sha256);
-assert.equal(clouds.scenes.length,3);
+assert.equal(clouds.scenes.length,6);
+verifyCloudAssets(root);
 assert.equal(clouds.auto_rotation,false);
 for (const scene of clouds.scenes) {
   assert.equal(sha(join(root,`assets/clouds/${scene.asset}`)),scene.asset_sha256);
@@ -150,4 +152,4 @@ function inspect(dir) {
 inspect(root);
 assert.equal(sharedFiles, Object.keys(identities.files).length, 'Missing original experiment content');
 assert(/\.method-video video\s*\{[^}]*border:\s*0;[^}]*border-radius:\s*0;/.test(read('styles.css')));
-console.log(JSON.stringify({status:'PASS',numericValues:333,paperFigures:5,pointCloudScenes:3,methodVideos:2,sections:headings,sharedFilesUnchanged:sharedFiles,originalRenderersUnchanged:true,videoAutoplayMutedLoop:true,videoBorder:false,externalRuntimeDependencies:0,standaloneRelativeAssets:true}));
+console.log(JSON.stringify({status:'PASS',numericValues:333,paperFigures:5,pointCloudScenes:6,methodVideos:2,sections:headings,sharedFilesUnchanged:sharedFiles,originalRenderersUnchanged:true,videoAutoplayMutedLoop:true,videoBorder:false,externalRuntimeDependencies:0,standaloneRelativeAssets:true}));

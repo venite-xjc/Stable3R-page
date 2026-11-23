@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="styles.css?v=20261123-main-gld">
   <script src="assets/paper/results-data.js" defer></script>
   <script src="app.js" defer></script>
-  <script src="assets/clouds/manifest.js" defer></script>
+  <script src="assets/clouds/manifest.js?v=20261123-six-scenes" defer></script>
   <script src="clouds.js" defer></script>
   <script src="presentation.js?v=20261123" defer></script>
 </head>
@@ -85,7 +85,7 @@
     <section class="section shell cloud-section" id="clouds" aria-labelledby="cloud-title" data-status="loading">
       <div class="section-heading"><h2 id="cloud-title">3D comparison</h2></div>
       <div class="cloud-controls">
-        <label class="dataset-label" for="cloud-scene">Scene <select id="cloud-scene"><option value="complete-kitchen">Kitchen structure</option><option value="stairs">Staircase geometry</option><option value="grey-room">Room surfaces</option></select></label>
+        <label class="dataset-label" for="cloud-scene">Scene <select id="cloud-scene"><option value="complete-kitchen">Kitchen structure</option><option value="stairs">Staircase geometry</option><option value="grey-room">Room surfaces</option><option value="morning-apartment">Apartment layout</option><option value="thin-geometry">Thin structures</option><option value="office-workspace">Office workspace</option></select></label>
         <div class="cloud-mode" role="group" aria-label="Point cloud color mode"><button type="button" data-cloud-mode="rgb" aria-pressed="false">RGB</button><button type="button" data-cloud-mode="error" aria-pressed="true">Error to GT</button></div>
         <div class="cloud-view-buttons"><button type="button" id="cloud-reset">Reset</button><button type="button" id="cloud-fit">Fit view</button></div>
       </div>

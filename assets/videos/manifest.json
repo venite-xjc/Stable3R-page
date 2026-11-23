@@ -1,0 +1,102 @@
+{
+  "revision": "2026-11-23-cropped-v1",
+  "source": "Author-supplied method videos; original files remain unchanged.",
+  "processing": "Full-animation union of non-white content; vertical crop only with 24px padding. No horizontal resize or frame removal. H.264 CRF 23, yuv420p and faststart.",
+  "poster_processing": "Frame at 75% of each cropped web video, JPEG quality 2.",
+  "videos": [
+    {
+      "asset": "dynamic_overview-web.mp4",
+      "poster": "dynamic_overview-web-poster.jpg",
+      "source_filename": "dynamic_overview.mp4",
+      "source_sha256": "e619b8c8026281a807309a8d883117a3652330313f96cf936806b4c0aa9177c4",
+      "sha256": "300d4f0a80cb1a02eb7bc53471282c453d4e1a174de419c4dc845220512909c5",
+      "poster_sha256": "b4b03c3f476550c57a497eb65305c33cfd3747dae4e7e7b8f929d447ba6cc947",
+      "source_bytes": 3330726,
+      "bytes": 515471,
+      "reduction_percent": 84.52376448858297,
+      "source_width": 1920,
+      "source_height": 1080,
+      "width": 1920,
+      "height": 684,
+      "crop": {
+        "x": 0,
+        "y": 202,
+        "width": 1920,
+        "height": 684,
+        "content_top": 226,
+        "content_bottom": 862,
+        "padding_pixels": 24
+      },
+      "duration_seconds": 14.554,
+      "frame_count": 441,
+      "source_frame_count": 441,
+      "fps_fraction": "66150/2183",
+      "codecs": [
+        "avc1"
+      ],
+      "audio_tracks": 0,
+      "transcoded": true,
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
+      "encoding": {
+        "codec": "libx264",
+        "preset": "slow",
+        "crf": 23,
+        "pixel_format": "yuv420p",
+        "faststart": true,
+        "resize": false
+      },
+      "ssim_against_cropped_source": 0.997091,
+      "poster_time_seconds": 10.9155,
+      "source_unchanged": true
+    },
+    {
+      "asset": "dynamic_pipeline-web.mp4",
+      "poster": "dynamic_pipeline-web-poster.jpg",
+      "source_filename": "dynamic_pipeline.mp4",
+      "source_sha256": "f1060273dd54e8e82ea479c4501d30c0f7cf9be43de650253054f28f040e6571",
+      "sha256": "002f42934107d2409dfd5becd2c9151cdf90c8aa4c1ff717140e91b4574796a1",
+      "poster_sha256": "a429b1548538391de3cfdd6bd72c7d7f4270254d9179d2153276d11a1ac79f9b",
+      "source_bytes": 3288249,
+      "bytes": 619236,
+      "reduction_percent": 81.16821445091293,
+      "source_width": 1920,
+      "source_height": 1080,
+      "width": 1920,
+      "height": 666,
+      "crop": {
+        "x": 0,
+        "y": 230,
+        "width": 1920,
+        "height": 666,
+        "content_top": 254,
+        "content_bottom": 872,
+        "padding_pixels": 24
+      },
+      "duration_seconds": 27.902,
+      "frame_count": 845,
+      "source_frame_count": 845,
+      "fps_fraction": "7267000/239953",
+      "codecs": [
+        "avc1"
+      ],
+      "audio_tracks": 0,
+      "transcoded": true,
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
+      "encoding": {
+        "codec": "libx264",
+        "preset": "slow",
+        "crf": 23,
+        "pixel_format": "yuv420p",
+        "faststart": true,
+        "resize": false
+      },
+      "ssim_against_cropped_source": 0.99756,
+      "poster_time_seconds": 20.9265,
+      "source_unchanged": true
+    }
+  ]
+}

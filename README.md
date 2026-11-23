@@ -4,6 +4,11 @@ Static project website for **Stable3R: Streaming 3D Reconstruction with Stable G
 
 Website: https://venite-xjc.github.io/Stable3R-page/
 
+The GLD-inspired edition is now the main homepage (2026-11-23), replacing the
+previous root layout. `/gld/` remains a compatible alias containing the same page;
+both declare the root URL as canonical. The old homepage is recoverable from Git
+at `d8c6e24`. There is no redirect to, or link back to, the old root layout.
+
 ## GitHub Pages
 
 Publish the `main` branch, `/(root)`, in **Settings → Pages → Deploy from a branch**. This repository already contains the website files at its root and a `.nojekyll` marker. No build step, backend, npm install, custom domain, or DNS change is required.
@@ -17,7 +22,9 @@ For local preview, run `python3 -m http.server 8767` from this directory. The in
 ```bash
 node --check app.js
 node --check clouds.js
+node --check presentation.js
 node scripts/verify-site.mjs
+node scripts/verify-site.mjs gld
 ```
 
 ## Paper masthead
@@ -43,3 +50,14 @@ The source archive and figure hashes remain in `assets/media-manifest.json`. The
 Three selected scenes compare Stable3R, StreamVGGT, and ground truth with matched RGB inputs, sampled pixels, viewing parameters, and error-color scales. Rotate, pan, or zoom any panel to synchronize all three views. There is no automatic animation.
 
 These are selected examples, not dataset-wide averages. The six scene-level metric JSON files are unchanged; hashes and comparison details are in `assets/clouds/manifest.json`. Paper table scores and point-cloud examples follow their respective, separately stated protocols.
+
+## Main homepage layout
+
+The page contains Abstract, Analysis, Method, 3D comparison, Results and Citation.
+Both cropped method videos play silently and loop using native browser controls.
+The Abstract is always visible, and the footer only credits the GLD layout.
+Experiment data and renderers are frozen in `scripts/content-identities.json`;
+the verifier also checks video hashes, relative paths and metadata hooks.
+
+All assets are served from this repository. `gld/` is kept synchronized with the
+root; `pvsm/` remains a separate earlier alternative and is not the homepage.

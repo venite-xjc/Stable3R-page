@@ -5,34 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Stable3R: Streaming 3D Reconstruction with Stable Geometric References. Original manuscript figures, method overview, quantitative results, and interactive matched-input 3D comparisons.">
   <meta name="theme-color" content="#ffffff">
-  <title>Stable3R | Streaming 3D Reconstruction</title>
+  <title>Stable3R | Streaming 3D Reconstruction with Stable Geometric References</title>
+  <link rel="canonical" href="https://venite-xjc.github.io/Stable3R-page/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="clouds.css">
+  <link rel="stylesheet" href="styles.css?v=20261123-main-gld">
   <script src="assets/paper/results-data.js" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/clouds/manifest.js" defer></script>
   <script src="clouds.js" defer></script>
+  <script src="presentation.js?v=20261123" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#overview">Skip to content</a>
-  <nav class="nav shell" aria-label="Main navigation">
-    <a class="wordmark" href="#top">Stable<span>3R</span><span class="mark-dot" aria-hidden="true"></span></a>
-    <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#clouds">Explore 3D</a><a href="#results">Results</a></div>
-  </nav>
+  <a class="skip-link" href="#abstract">Skip to content</a>
+  <aside class="sidebar">
+    <a class="sidebar-brand" href="#top">Stable3R</a>
+    <nav id="section-nav" aria-label="On this page">
+      <a href="#abstract" aria-current="location">Abstract</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#method">Method</a>
+      <a href="#clouds">3D comparison</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </nav>
+  </aside>
+  <div class="document">
   <header class="hero shell" id="top">
+    <a class="venue" href="https://neurips.cc/Conferences/2026" target="_blank" rel="noopener" aria-label="NeurIPS 2026 conference"><span class="venue-logo" role="img" aria-label="NeurIPS logo"></span><span>NeurIPS 2026</span></a>
     <h1>Stable<span>3R</span></h1>
     <p class="paper-title">Streaming 3D Reconstruction with Stable Geometric References</p>
-    <p class="venue">NeurIPS 2026</p>
     <ul class="authors" aria-label="Authors">
-      <li><a href="https://venite-xjc.github.io/" target="_blank" rel="noopener">Jincheng Xiong</a><sup>1</sup></li>
-      <li>Jiarong Han<sup>2</sup></li>
+      <li><a href="https://venite-xjc.github.io/" target="_blank" rel="noopener">Jincheng Xiong</a><sup>1,2,*</sup></li>
+      <li>Jiarong Han<sup>2,*</sup></li>
       <li><a href="https://openreview.net/profile?id=~Hang_Zhang22" target="_blank" rel="noopener">Hang Zhang</a><sup>2</sup></li>
       <li>Mu Xu<sup>2</sup></li>
       <li><a href="https://qianmingduowan.github.io/" target="_blank" rel="noopener">Ming Qian</a><sup>2,†</sup></li>
     </ul>
-    <div class="affiliations"><span><sup>1</sup> Zhejiang University</span><span><sup>2</sup> AMAP CVLab, Alibaba</span></div>
-    <p class="corresponding"><sup>†</sup> Corresponding author</p>
+    <div class="affiliations"><span><sup>1</sup> Zhejiang University</span><span><sup>2</sup> AMAP, Alibaba</span></div>
+    <p class="author-notes"><span><sup>*</sup> Equal contribution</span><span><sup>†</sup> Corresponding author</span></p>
     <div class="hero-links" role="group" aria-label="Project resources">
       <!-- Resource destinations are intentionally unset until release. Icons: Simple Icons (CC0); see assets/icons/SOURCES.txt. -->
       <button class="resource-button" type="button" disabled title="Link coming soon" aria-label="arXiv — link coming soon">
@@ -50,33 +59,30 @@
     </div>
   </header>
   <main>
-    <section class="shell overview" id="overview" aria-labelledby="overview-title">
-      <div class="probe-grid">
-        <figure class="probe-figure">
-          <a class="figure-link" href="assets/paper/probe.pdf" target="_blank" rel="noopener" aria-label="Open the original teaser figure PDF" title="Context probe: the initial frame and final 20 probe frames are fixed; only the intermediate context changes."><img src="assets/paper/probe.webp" width="1152" height="848" fetchpriority="high" alt="NRGBD geometric context probe: StreamVGGT mean ATE changes substantially as intermediate frames are added, while Stable3R remains lower and more stable."></a>
-          <figcaption>Context sensitivity on NRGBD.</figcaption>
-        </figure>
-        <div class="probe-copy">
-          <h2 id="overview-title">Stable geometric<br>references.</h2>
-          <p>Refine historical memory and reduce first-frame bias—without revising past predictions.</p>
-        </div>
-      </div>
-      <section class="abstract" id="abstract" aria-labelledby="abstract-title">
-        <h2 id="abstract-title">Abstract</h2>
+    <section class="section shell abstract" id="abstract" aria-labelledby="abstract-title">
+      <div class="section-heading"><h2 id="abstract-title">Abstract</h2></div>
         <p>Causal attention and KV-caching enable streaming 3D reconstruction, but information-poor early caches and first-frame anchoring can introduce persistent geometric bias. Stable3R addresses both sources of instability: lookahead attention refines historical caches as new observations arrive, while a frame-equivariant architecture with prefix-relative pose supervision reduces reliance on a single initial frame. Together, these designs improve reconstruction quality and camera pose estimation while preserving a strictly causal inference schedule.</p>
-      </section>
     </section>
-    <section class="section shell" id="method" aria-labelledby="method-title">
-      <div class="section-heading"><h2 id="method-title">Method</h2></div>
-      <figure class="paper-figure pipeline-figure"><a class="figure-link" href="assets/paper/pipeline.pdf" target="_blank" rel="noopener" aria-label="Open the original Stable3R framework figure PDF"><img width="3200" height="1090" src="assets/paper/pipeline-1600.webp" srcset="assets/paper/pipeline-1600.webp 1600w, assets/paper/pipeline.webp 3200w" sizes="(max-width: 1120px) 92vw, 1080px" loading="lazy" alt="Stable3R framework: an image encoder and frame attention feed a QU-KV cache, followed by historical U updates, lookahead attention, and camera and geometry prediction heads."></a></figure>
-      <div class="method-notes">
-        <article><div><h3>Lookahead attention</h3><p>New observations refine historical memory.</p></div></article>
-        <article><div><h3>Prefix-relative supervision</h3><p>Learn relative poses across the observed prefix.</p></div></article>
+    <section class="section shell analysis" id="analysis" aria-labelledby="analysis-title">
+      <div class="section-heading"><h2 id="analysis-title">Analysis</h2></div>
+      <p class="section-lead">Early frames see the least geometry, yet their estimates can influence the entire sequence.</p>
+      <div class="analysis-evidence">
+      <figure class="probe-figure"><a class="figure-link" href="assets/paper/probe.pdf" target="_blank" rel="noopener" aria-label="Open the original context probe figure PDF" title="Context probe: the initial frame and final 20 probe frames are fixed; only the intermediate context changes."><img src="assets/paper/probe.webp" width="1152" height="848" loading="lazy" alt="NRGBD geometric context probe: StreamVGGT mean ATE changes substantially as intermediate frames are added, while Stable3R remains lower and more stable."></a><figcaption>Context sensitivity on NRGBD.</figcaption></figure>
+        <div class="probe-reading"><h3>Context matters.</h3><p>We fix the initial frame and the final 20 probe frames, varying only the intermediate observations. More context reduces StreamVGGT's probe error. Stable3R remains lower and more stable, revealing the value of reliable historical references.</p></div>
       </div>
-      <details class="technical-detail"><summary>Parallel training <span aria-hidden="true">+</span></summary><figure class="paper-figure"><a class="figure-link" href="assets/paper/parallel-attention.pdf" target="_blank" rel="noopener" aria-label="Open the original parallel attention figure PDF"><img width="3200" height="824" src="assets/paper/parallel-attention-1600.webp" srcset="assets/paper/parallel-attention-1600.webp 1600w, assets/paper/parallel-attention.webp 3200w" sizes="92vw" loading="lazy" alt="Original paper diagram of block-wise causal attention, diagonal dependency order, update kernels, and attention kernels."></a></figure></details>
+      <div class="analysis-findings">
+        <article class="finding"><h3>Information-poor caches</h3><p>Standard KV-caching freezes early representations before enough geometric evidence has arrived.</p><div class="finding-response"><h4>Lookahead attention</h4><p>Use newly observed frames to refine historical memory for subsequent predictions, without revising past outputs.</p></div></article>
+        <article class="finding"><h3>First-frame privilege</h3><p>Special reference-frame representations and first-frame-anchored pose constraints amplify an initially noisy estimate.</p><div class="finding-response"><h4>Frame-equivariant modeling + prefix-relative supervision</h4><p>Share the same token layout across frames and supervise poses against the observed prefix, rather than a single initial frame.</p></div></article>
+      </div>
+    </section>
+    <section class="section shell method" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><h2 id="method-title">Method</h2></div>
+      <figure class="method-video"><div class="video-heading"><h3>Framework overview</h3><p>From incoming frames to stable geometry and camera poses.</p></div><video id="overview-video" width="1920" height="684" autoplay muted loop controls playsinline preload="auto" poster="assets/videos/dynamic_overview-web-poster.jpg" aria-label="Stable3R method overview video" aria-describedby="overview-video-caption"><source src="assets/videos/dynamic_overview-web.mp4" type="video/mp4">Your browser does not support embedded video. <a href="assets/videos/dynamic_overview-web.mp4">Open the framework overview video</a>.</video><figcaption id="overview-video-caption">Frame-equivariant representations, lookahead-updated memory, and prefix-relative pose supervision.</figcaption></figure>
+      <figure class="method-video"><div class="video-heading"><h3>Lookahead attention</h3><p>New observations enrich the memory used by the current frame.</p></div><video id="pipeline-video" width="1920" height="666" autoplay muted loop controls playsinline preload="auto" poster="assets/videos/dynamic_pipeline-web-poster.jpg" aria-label="Stable3R lookahead attention pipeline video" aria-describedby="pipeline-video-caption"><source src="assets/videos/dynamic_pipeline-web.mp4" type="video/mp4">Your browser does not support embedded video. <a href="assets/videos/dynamic_pipeline-web.mp4">Open the lookahead pipeline video</a>.</video><figcaption id="pipeline-video-caption">Update the historical lookahead states, then predict the current frame. Previously emitted outputs stay unchanged.</figcaption></figure>
+      <details class="technical-detail"><summary>Static diagrams &amp; parallel training <span aria-hidden="true">+</span></summary><figure class="paper-figure"><a class="figure-link" href="assets/paper/pipeline.pdf" target="_blank" rel="noopener" aria-label="Open the original Stable3R framework figure PDF"><img width="3200" height="1090" src="assets/paper/pipeline-1600.webp" srcset="assets/paper/pipeline-1600.webp 1600w, assets/paper/pipeline.webp 3200w" sizes="92vw" loading="lazy" alt="Stable3R framework: an image encoder and frame attention feed a QU-KV cache, followed by historical U updates, lookahead attention, and camera and geometry prediction heads."></a></figure><figure class="paper-figure"><a class="figure-link" href="assets/paper/parallel-attention.pdf" target="_blank" rel="noopener" aria-label="Open the original parallel attention figure PDF"><img width="3200" height="824" src="assets/paper/parallel-attention-1600.webp" srcset="assets/paper/parallel-attention-1600.webp 1600w, assets/paper/parallel-attention.webp 3200w" sizes="92vw" loading="lazy" alt="Original paper diagram of block-wise causal attention, diagonal dependency order, update kernels, and attention kernels."></a></figure></details>
     </section>
     <section class="section shell cloud-section" id="clouds" aria-labelledby="cloud-title" data-status="loading">
-      <div class="section-heading"><h2 id="cloud-title">Interactive comparison</h2></div>
+      <div class="section-heading"><h2 id="cloud-title">3D comparison</h2></div>
       <div class="cloud-controls">
         <label class="dataset-label" for="cloud-scene">Scene <select id="cloud-scene"><option value="complete-kitchen">Kitchen structure</option><option value="stairs">Staircase geometry</option><option value="grey-room">Room surfaces</option></select></label>
         <div class="cloud-mode" role="group" aria-label="Point cloud color mode"><button type="button" data-cloud-mode="rgb" aria-pressed="false">RGB</button><button type="button" data-cloud-mode="error" aria-pressed="true">Error to GT</button></div>
@@ -91,10 +97,10 @@
       </div>
       <div class="cloud-highlight"><strong id="cloud-advantage"></strong><span>Selected scene only</span></div>
       <p class="cloud-status" id="cloud-status" role="status">Loading real point clouds…</p>
-      <details class="cloud-protocol"><summary>Details &amp; sources</summary><p id="cloud-sampling-note"></p><p>Matched RGB frames · 518 × 392 · BF16 · full history. Same camera, point size and error scale; no model-specific filtering. RGB-D ground truth is used for evaluation. Error colors measure distance to the full GT cloud, not the display subset.</p><p>Evaluation: first-camera GT coordinates, median depth shift/scale normalization, 224 × 224 center crop, correspondence Sim(3), and point-to-point ICP (0.1 m). Acc ↓: predicted-to-GT distance; Comp ↓: GT-to-predicted distance; NC ↑: normal consistency.</p><p>Drag to rotate, Shift/right-drag to pan, scroll/pinch to zoom. Arrow keys rotate; +/− zoom; R resets. Views are synchronized; there is no automatic rotation.</p><p>Three selected examples, not a dataset-wide average. <a href="assets/clouds/manifest.json">Frame IDs, metrics &amp; source hashes</a></p></details>
+      <p id="cloud-sampling-note" hidden></p>
     </section>
     <section class="section shell" id="results" aria-labelledby="results-title">
-      <div class="section-heading"><h2 id="results-title">Paper results</h2></div>
+      <div class="section-heading"><h2 id="results-title">Results</h2></div>
       <figure class="paper-figure reconstruction-figure"><a class="figure-link" href="assets/paper/reconstruction.pdf" target="_blank" rel="noopener" aria-label="Open the original reconstruction comparison PDF"><img width="3200" height="2142" src="assets/paper/reconstruction-1600.webp" srcset="assets/paper/reconstruction-1600.webp 1600w, assets/paper/reconstruction.webp 3200w" sizes="(max-width: 1120px) 92vw, 1080px" loading="lazy" alt="Original reconstruction comparison of CUT3R, TTT3R, StreamVGGT, LongStream, and Stable3R, with staircase and dynamic indoor examples under sparse and mid-length settings."></a><figcaption>Sparse (top) and 25-frame (bottom) reconstructions. Stable3R: rightmost.</figcaption></figure>
       <div class="result-block" aria-labelledby="reconstruction-title">
         <div class="result-title"><h3 id="reconstruction-title">3D reconstruction</h3></div>
@@ -103,19 +109,33 @@
           <tr><th scope="row">CUT3R</th><td>0.080</td><td>0.046</td><td>0.053</td><td>0.025</td><td>0.820</td><td>0.958</td></tr><tr><th scope="row">TTT3R</th><td>0.087</td><td>0.049</td><td>0.055</td><td>0.028</td><td>0.808</td><td>0.948</td></tr><tr><th scope="row">StreamVGGT</th><td>0.079</td><td>0.055</td><td>0.059</td><td>0.032</td><td>0.846</td><td>0.983</td></tr><tr><th scope="row">LongStream</th><td>0.078</td><td>0.050</td><td>0.052</td><td>0.024</td><td>0.836</td><td>0.975</td></tr><tr class="ours"><th scope="row">Stable3R</th><td><strong>0.022</strong></td><td><strong>0.014</strong></td><td><strong>0.020</strong></td><td><strong>0.010</strong></td><td><strong>0.884</strong></td><td><strong>0.987</strong></td></tr>
         </tbody></table></div>
         <p class="missing-note" id="missing-note" hidden>— Not reported in the paper.</p>
-        <details class="reading-detail result-details"><summary>Protocol &amp; metrics</summary><p><span id="reconstruction-source">Paper Table 1</span>. <span id="reconstruction-note">Uniformly sampled 25-frame sequences.</span></p><p>Accuracy: predicted-to-reference distance. Completeness: reference-to-predicted distance. Normal consistency: surface-normal agreement. ↓ Lower is better; ↑ higher is better.</p><p><strong>Bold</strong>: best; <span class="runner-up">underline</span>: second best. <a href="assets/paper/results.json">Paper table data</a></p></details>
+        <!-- Non-visual metadata hooks keep the shared table renderer unchanged. -->
+        <div hidden aria-hidden="true"><span id="reconstruction-source"></span><span id="reconstruction-note"></span></div>
       </div>
       <div class="result-block pose-block" aria-labelledby="pose-title">
         <div class="result-title"><h3 id="pose-title">Camera pose estimation</h3><label class="dataset-label" for="pose-dataset">Dataset <select id="pose-dataset"><option>Sintel</option><option>TUM-dynamics</option><option>ScanNet</option></select></label></div>
         <div class="table-scroll" tabindex="0" role="region" aria-label="Camera pose results; scroll horizontally on smaller screens"><table id="pose-table"><caption class="sr-only">Sintel camera pose results from the manuscript</caption><thead><tr><th scope="col">Method</th><th scope="col">ATE ↓</th><th scope="col">RPE translation ↓</th><th scope="col">RPE rotation ↓</th></tr></thead><tbody id="pose-body">
           <tr><th scope="row">CUT3R</th><td>0.210</td><td>0.071</td><td>0.607</td></tr><tr><th scope="row">TTT3R</th><td>0.209</td><td>0.082</td><td>0.683</td></tr><tr><th scope="row">StreamVGGT</th><td>0.232</td><td>0.082</td><td>0.669</td></tr><tr><th scope="row">LongStream</th><td>0.194</td><td>0.076</td><td>0.604</td></tr><tr class="ours"><th scope="row">Stable3R</th><td><strong>0.116</strong></td><td><strong>0.054</strong></td><td><strong>0.425</strong></td></tr>
         </tbody></table></div>
-        <details class="reading-detail result-details"><summary>Protocol &amp; metrics</summary><p>Paper Table 3. Sim(3)-aligned trajectories. TUM-dynamics and ScanNet: 90 frames; Sintel: 20–50 frames. ATE: absolute translation error; RPE: relative pose error. All metrics are lower-is-better.</p></details>
         <figure class="paper-figure trajectory-figure"><a class="figure-link" href="assets/paper/trajectories.pdf" target="_blank" rel="noopener" aria-label="Open the original TUM camera trajectory comparison PDF"><img width="3200" height="1342" src="assets/paper/trajectories-1600.webp" srcset="assets/paper/trajectories-1600.webp 1600w, assets/paper/trajectories.webp 3200w" sizes="(max-width: 1120px) 92vw, 1080px" loading="lazy" alt="TUM trajectory comparisons for five methods: red predicted camera paths versus dashed gray ground truth. Stable3R is shown in the last column."></a><figcaption>TUM trajectories · Red: prediction; dashed gray: ground truth.</figcaption></figure>
       </div>
       <noscript><p class="source-note">JavaScript is disabled. The tables above show NRGBD 25-frame reconstruction and Sintel pose results. <a href="assets/paper/results.json">Download all table values as JSON.</a></p></noscript>
     </section>
+    <section class="section shell citation" id="citation" aria-labelledby="citation-title">
+      <div class="section-heading"><h2 id="citation-title">Citation</h2></div>
+      <div class="citation-box"><button type="button" id="copy-citation" aria-label="Copy BibTeX citation">Copy</button><pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex-text">@inproceedings{xiong2026stable3r,
+  title     = {Stable3R: Streaming 3D Reconstruction with Stable Geometric References},
+  author    = {Xiong, Jincheng and Han, Jiarong and Zhang, Hang and Xu, Mu and Qian, Ming},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://venite-xjc.github.io/Stable3R-page/}
+}</code></pre></div>
+      <p id="copy-status" class="sr-only" role="status"></p>
+    </section>
   </main>
-  <footer class="shell footer"><a class="wordmark" href="#top">Stable<span>3R</span></a><p class="footer-source"><a href="assets/paper/results.json">Paper data</a><span aria-hidden="true"> · </span><a href="assets/media-manifest.json">Figures</a><span aria-hidden="true"> · </span><a href="assets/clouds/manifest.json">3D sources</a></p></footer>
+  <footer class="shell footer">
+    <p class="layout-credit">Layout inspired by <a href="https://cvlab-kaist.github.io/GLD/" target="_blank" rel="noopener">GLD</a></p>
+  </footer>
+  </div>
 </body>
 </html>

@@ -15,3 +15,12 @@ https://creativecommons.org/publicdomain/zero/1.0/
 
 The SVG paths are unmodified. The container uses aria-hidden=true and inherits
 the button foreground color. Brand marks remain the property of their owners.
+
+NeurIPS conference mark, retrieved 2026-11-23 from the official media kit:
+https://neurips.cc/public/MediaKit
+https://neurips.cc/media/Press/NeurIPS_logo.svg
+
+neurips-logo.svg is the original, unmodified SVG. The masthead displays it with
+a monochrome CSS mask in the site's warm accent color, alongside the 2026 year.
+The NeurIPS mark remains the property of its owner; no sponsor affiliation or
+conference presentation award is implied.

@@ -1,0 +1,28 @@
+[
+  {
+    "asset" : "dynamic_overview.mp4",
+    "audio_tracks" : 0,
+    "codecs" : [
+      "avc1"
+    ],
+    "duration_seconds" : 14.553333333333333,
+    "fps" : 30.303030014038086,
+    "height" : 1080,
+    "poster" : "dynamic_overview-poster.jpg",
+    "poster_time_seconds" : 10.914999999999999,
+    "width" : 1920
+  },
+  {
+    "asset" : "dynamic_pipeline.mp4",
+    "audio_tracks" : 0,
+    "codecs" : [
+      "avc1"
+    ],
+    "duration_seconds" : 27.911666666666665,
+    "fps" : 30.230602264404297,
+    "height" : 1080,
+    "poster" : "dynamic_pipeline-poster.jpg",
+    "poster_time_seconds" : 20.93375,
+    "width" : 1920
+  }
+]

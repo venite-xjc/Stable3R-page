@@ -3,7 +3,7 @@
 (() => {
   const links = Array.from(document.querySelectorAll('#section-nav a'));
   const setActive = id => {
-    if (id === 'top') id = 'overview';
+    if (id === 'top') id = 'abstract';
     for (const link of links) {
       if (link.hash === '#' + id) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');

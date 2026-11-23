@@ -1,0 +1,43 @@
+{
+  "revision": "2026-11-23",
+  "source": "Author-supplied method videos",
+  "poster_processing": "Single original frame at 75% of duration; proportional resize to at most 1800px, JPEG quality 0.92. No diagram content edits.",
+  "videos": [
+    {
+      "asset": "dynamic_overview.mp4",
+      "audio_tracks": 0,
+      "codecs": [
+        "avc1"
+      ],
+      "duration_seconds": 14.553333333333333,
+      "fps": 30.303030014038086,
+      "height": 1080,
+      "poster": "dynamic_overview-poster.jpg",
+      "poster_time_seconds": 10.915,
+      "width": 1920,
+      "source_filename": "dynamic_overview.mp4",
+      "sha256": "e619b8c8026281a807309a8d883117a3652330313f96cf936806b4c0aa9177c4",
+      "poster_sha256": "e241b21f5a364baf1c378df665eeb33c5377528fa0ad350e672ae01c7606f042",
+      "transcoded": false,
+      "autoplay": false
+    },
+    {
+      "asset": "dynamic_pipeline.mp4",
+      "audio_tracks": 0,
+      "codecs": [
+        "avc1"
+      ],
+      "duration_seconds": 27.911666666666665,
+      "fps": 30.230602264404297,
+      "height": 1080,
+      "poster": "dynamic_pipeline-poster.jpg",
+      "poster_time_seconds": 20.93375,
+      "width": 1920,
+      "source_filename": "dynamic_pipeline.mp4",
+      "sha256": "f1060273dd54e8e82ea479c4501d30c0f7cf9be43de650253054f28f040e6571",
+      "poster_sha256": "252e46894e0c4a719f082768e253814a9cb5af13be8db7a4546d7efa5183fb82",
+      "transcoded": false,
+      "autoplay": false
+    }
+  ]
+}

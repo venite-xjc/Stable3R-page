@@ -36,7 +36,9 @@
       ],
       "audio_tracks": 0,
       "transcoded": true,
-      "autoplay": false,
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
       "encoding": {
         "codec": "libx264",
         "preset": "slow",
@@ -81,7 +83,9 @@
       ],
       "audio_tracks": 0,
       "transcoded": true,
-      "autoplay": false,
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
       "encoding": {
         "codec": "libx264",
         "preset": "slow",

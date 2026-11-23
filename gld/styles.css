@@ -77,7 +77,7 @@ figcaption { color: #696969; font-size: 14px; line-height: 1.65; margin-top: 13p
 .video-heading { margin-bottom: 17px; }
 .video-heading h3 { font-size: 21px; font-weight: 650; line-height: 1.5; letter-spacing: -.3px; }
 .video-heading p { color: #666; font-size: 16px; margin-top: 4px; line-height: 1.7; }
-.method-video video { display: block; width: 100%; height: auto; max-height: 750px; border: 1px solid var(--line); border-radius: 12px; background: #fff; object-fit: contain; }
+.method-video video { display: block; width: 100%; height: auto; max-height: 750px; border: 0; border-radius: 0; background: #fff; object-fit: contain; }
 .method-video figcaption { margin-top: 11px; }
 .technical-detail { border: 1px solid var(--line); background: #fafaf9; padding: 14px 17px; border-radius: 10px; margin-top: 25px; }
 .technical-detail summary { display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 14px; font-weight: 600; }

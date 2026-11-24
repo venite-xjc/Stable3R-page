@@ -1,6 +1,60 @@
 "use strict";
-// Scroll-position navigation and user-triggered citation copy. No motion loop.
+// Expanded selectors, scroll-position navigation, and citation copy. No motion loop.
 (() => {
+  // Keep the shared renderers and native-select fallback intact.
+  const pickers = [
+    ['cloud-scene', 'Point cloud scene', 'cloud-panels'],
+    ['reconstruction-dataset', 'Reconstruction dataset', 'reconstruction-table'],
+    ['pose-dataset', 'Camera pose dataset', 'pose-table']
+  ];
+  for (const [id, name, target] of pickers) {
+    const select = document.getElementById(id);
+    const label = select.closest('label');
+    const group = document.createElement('div');
+    group.className = 'choice-picker';
+    group.dataset.choiceFor = id;
+    group.setAttribute('role', 'group');
+    group.setAttribute('aria-label', name);
+    const heading = document.createElement('span');
+    heading.className = 'choice-label';
+    heading.textContent = id === 'cloud-scene' ? 'Scene' : 'Dataset';
+    const options = document.createElement('div');
+    options.className = 'choice-options';
+    group.append(heading, options);
+    function sync() {
+      for (const button of options.children) {
+        button.setAttribute('aria-pressed', String(button.dataset.choice === select.value));
+      }
+    }
+    function render() {
+      options.replaceChildren(...Array.from(select.options).filter(option => !option.hidden).map(option => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'choice-button';
+        button.dataset.choice = option.value;
+        button.textContent = option.label;
+        button.disabled = select.disabled || option.disabled;
+        button.setAttribute('aria-controls', target);
+        button.addEventListener('click', () => {
+          if (select.value === option.value) return;
+          select.value = option.value;
+          select.dispatchEvent(new Event('change', {bubbles: true}));
+        });
+        return button;
+      }));
+      sync();
+    }
+    render();
+    select.addEventListener('change', sync);
+    // Protocol switches replace the dataset options, so update the pills too.
+    new MutationObserver(render).observe(select, {
+      childList: true, subtree: true, characterData: true,
+      attributes: true, attributeFilter: ['selected', 'disabled', 'hidden', 'label', 'value']
+    });
+    label.after(group);
+    label.hidden = true;
+  }
+
   const links = Array.from(document.querySelectorAll('#section-nav a'));
   const setActive = id => {
     if (id === 'top') id = 'abstract';

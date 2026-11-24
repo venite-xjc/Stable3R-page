@@ -65,10 +65,12 @@ stated protocols. No dataset-wide benchmark was rerun or changed.
 
 A copper-header, initially collapsed News disclosure appears immediately before
 Abstract, with white header text and a white expanded body with dark text.
+The 14px summary has no separate News badge and fits one line at desktop widths;
+it wraps naturally on narrow screens.
 It introduces the authors' follow-up ABot-Recon, contrasts ultra-long outdoor
 routes with Stable3R's bounded-spatial-area focus, and links the project homepage,
 technical report, evaluation branch, inference runtime and training branch.
-The 100K-frame-scale phrasing is author-supplied positioning, not an additional
+The over-100K-frame phrasing is author-supplied positioning, not an additional
 benchmark claim measured by this website. The disclosure uses native HTML and
 does not add JavaScript, animation or an external runtime dependency.
 

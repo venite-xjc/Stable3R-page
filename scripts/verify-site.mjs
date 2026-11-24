@@ -54,7 +54,7 @@ assert(!html.includes('<summary>Abstract</summary>'));
 const news = html.match(/<details class="news-card" id="abot-news">([\s\S]*?)<\/details>/);
 assert(news, 'News must use a collapsed native disclosure');
 assert(html.indexOf('id="abot-news"') < html.indexOf('id="abstract"'), 'News must precede Abstract');
-assert(news[1].includes('We release <strong>ABot-Recon</strong> for streaming reconstruction of over 100K frames! Click for details!'));
+assert(news[1].includes('We release <strong>ABot-Recon</strong> for streaming reconstruction of over 50K frames! Click for details!'));
 assert(!news[1].includes('news-label') && news[1].includes('ultra-long outdoor routes'));
 assert(news[1].includes('bounded spatial area') && news[1].includes('technical report'));
 assert(/\.news-card summary\s*\{[^}]*background:\s*#a46527;\s*color:\s*#fff;/.test(read('styles.css')), 'News header must be copper with white text');

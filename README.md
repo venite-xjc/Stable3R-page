@@ -72,7 +72,7 @@ bold throughput, GPU-memory and sequence-length figures, followed by the simple
 architecture, million-sequence training scale and streaming-backbone positioning.
 The only link is the project homepage, inline at the end of the second paragraph.
 The technical report and released frameworks are mentioned without extra links.
-The over-100K-frame phrasing is author-supplied positioning, not an additional
+The over-50K-frame phrasing is author-supplied positioning, not an additional
 benchmark claim measured by this website. The disclosure uses native HTML and
 does not add JavaScript, animation or an external runtime dependency.
 

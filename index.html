@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://venite-xjc.github.io/Stable3R-page/">
   <link rel="icon" href="assets/icons/stable3r-mark-32.png?v=20261123-copper" sizes="32x32" type="image/png">
   <link rel="icon" href="assets/icons/stable3r-mark.svg?v=20261123-copper" sizes="any" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261123-main-gld">
+  <link rel="stylesheet" href="styles.css?v=20261124-abot-news">
   <script src="assets/paper/results-data.js" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/clouds/manifest.js?v=20261123-six-scenes" defer></script>
@@ -60,6 +60,16 @@
     </div>
   </header>
   <main>
+    <aside class="shell news" aria-label="News: our follow-up work">
+      <details class="news-card" id="abot-news">
+        <summary><span class="news-label">News</span><span class="news-headline">Discover <strong>ABot-Recon</strong>: simple, efficient, high-quality streaming reconstruction at <strong>100K-frame scale</strong>.</span><span class="news-toggle" aria-hidden="true"></span></summary>
+        <div class="news-body">
+          <p>Built for ultra-long outdoor routes and large spatial extents, ABot-Recon is our follow-up to Stable3R. The two methods are complementary: Stable3R is better suited to reconstruction within a bounded spatial area.</p>
+          <p>We have released the <a href="https://arxiv.org/abs/2608.27529" target="_blank" rel="noopener">technical report</a> and open-sourced the <a href="https://github.com/amap-cvlab/ABot-Recon/tree/eval" target="_blank" rel="noopener">evaluation</a>, <a href="https://github.com/amap-cvlab/ABot-Recon" target="_blank" rel="noopener">inference</a>, and <a href="https://github.com/amap-cvlab/ABot-Recon/tree/train" target="_blank" rel="noopener">training</a> frameworks. Dive in and explore!</p>
+          <a class="news-project-link" href="https://amap-cvlab.github.io/ABot-Recon-html/" target="_blank" rel="noopener">Visit the ABot-Recon homepage</a>
+        </div>
+      </details>
+    </aside>
     <section class="section shell abstract" id="abstract" aria-labelledby="abstract-title">
       <div class="section-heading"><h2 id="abstract-title">Abstract</h2></div>
         <p>Causal attention and KV-caching enable streaming 3D reconstruction, but information-poor early caches and first-frame anchoring can introduce persistent geometric bias. Stable3R addresses both sources of instability: lookahead attention refines historical caches as new observations arrive, while a frame-equivariant architecture with prefix-relative pose supervision reduces reliance on a single initial frame. Together, these designs improve reconstruction quality and camera pose estimation while preserving a strictly causal inference schedule.</p>

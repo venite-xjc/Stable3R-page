@@ -63,6 +63,14 @@ stated protocols. No dataset-wide benchmark was rerun or changed.
 
 ## Main homepage layout
 
+A dark, initially collapsed News disclosure appears immediately before Abstract.
+It introduces the authors' follow-up ABot-Recon, contrasts ultra-long outdoor
+routes with Stable3R's bounded-spatial-area focus, and links the project homepage,
+technical report, evaluation branch, inference runtime and training branch.
+The 100K-frame-scale phrasing is author-supplied positioning, not an additional
+benchmark claim measured by this website. The disclosure uses native HTML and
+does not add JavaScript, animation or an external runtime dependency.
+
 The page contains Abstract, Analysis, Method, 3D comparison, Results and Citation.
 Both cropped method videos play silently and loop using native browser controls.
 The Abstract is always visible, and the footer only credits the GLD layout.

@@ -84,6 +84,7 @@ assert(html.indexOf('assets/paper/probe.webp') < html.indexOf('id="method"'));
 assert.equal((html.match(/class="resource-button" type="button" disabled/g) || []).length, 3);
 assert(html.includes('Ming Qian</a><sup>2,†</sup>'));
 assert(html.includes('NeurIPS 2026'));
+assert(html.includes('class="venue" href="https://neurips.cc/virtual/2026/loc/sydney/poster/154907"'));
 assert(!html.includes('href="assets/favicon.svg"'), 'Legacy blue S favicon must not be displayed');
 assert(html.includes('assets/icons/stable3r-mark.svg?v=20261123-copper'));
 const favicon = readFileSync(join(root,'assets/icons/stable3r-mark-32.png'));

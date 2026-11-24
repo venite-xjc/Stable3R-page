@@ -67,7 +67,7 @@ img { display: block; width: 100%; height: auto; }
 .news-body p { margin-top: 17px; }
 .news-body a { color: var(--accent-dark); text-underline-offset: 4px; }
 .news-body a:hover { color: #6d471f; }
-.news-project-link { display: inline-block; margin-top: 17px; font-weight: 650; }
+.news-project-link { font-weight: 650; }
 .figure-link { display: block; border-radius: 6px; }
 .figure-link:hover { outline: 2px solid #e7d6c1; outline-offset: 6px; }
 figcaption { color: #696969; font-size: 14px; line-height: 1.65; margin-top: 13px; }

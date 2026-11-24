@@ -59,7 +59,13 @@ assert(!news[1].includes('news-label') && news[1].includes('ultra-long outdoor r
 assert(news[1].includes('bounded spatial area') && news[1].includes('technical report'));
 assert(/\.news-card summary\s*\{[^}]*background:\s*#a46527;\s*color:\s*#fff;/.test(read('styles.css')), 'News header must be copper with white text');
 assert(/\.news-body\s*\{[^}]*background:\s*#fff;\s*color:\s*#242424;/.test(read('styles.css')), 'Expanded News must have a white background and dark text');
-for (const url of ['https://amap-cvlab.github.io/ABot-Recon-html/','https://arxiv.org/abs/2608.27529','https://github.com/amap-cvlab/ABot-Recon','https://github.com/amap-cvlab/ABot-Recon/tree/eval','https://github.com/amap-cvlab/ABot-Recon/tree/train']) assert(news[1].includes(`href="${url}" target="_blank" rel="noopener"`));
+assert(news[1].includes('href="https://amap-cvlab.github.io/ABot-Recon-html/" target="_blank" rel="noopener"'));
+assert.equal((news[1].match(/<a\b/g)||[]).length,1, 'Announcement must contain only the homepage link');
+assert.equal((news[1].match(/<p>/g)||[]).length,2, 'Expanded announcement must have exactly two paragraphs');
+assert(/<p>[^]*?<a class="news-project-link"[^]*?<\/a>\.<\/p>/.test(news[1]), 'Homepage link must remain inline in a paragraph');
+for(const metric of ['&gt;24 FPS','&lt;7 GB','50K+ frames','over 1 million sequences']) assert(news[1].includes(`<strong>${metric}</strong>`));
+assert(news[1].includes('ABot-Recon outperforms LingBot-Map overall') && news[1].includes('streaming backbone'));
+assert(!news[1].includes('input storage excluded') && !news[1].includes('KITTI-02'));
 assert(!html.includes('TL;DR') && !html.includes('summary-note'));
 assert(!html.includes('Details &amp; sources') && !html.includes('Protocol &amp; metrics'));
 assert(!html.includes('class="cloud-protocol"') && !html.includes('result-details'));

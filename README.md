@@ -67,9 +67,11 @@ A copper-header, initially collapsed News disclosure appears immediately before
 Abstract, with white header text and a white expanded body with dark text.
 The 14px summary has no separate News badge and fits one line at desktop widths;
 it wraps naturally on narrow screens.
-It introduces the authors' follow-up ABot-Recon, contrasts ultra-long outdoor
-routes with Stable3R's bounded-spatial-area focus, and links the project homepage,
-technical report, evaluation branch, inference runtime and training branch.
+Its expanded body has two paragraphs: an overall comparison with LingBot-Map and
+bold throughput, GPU-memory and sequence-length figures, followed by the simple
+architecture, million-sequence training scale and streaming-backbone positioning.
+The only link is the project homepage, inline at the end of the second paragraph.
+The technical report and released frameworks are mentioned without extra links.
 The over-100K-frame phrasing is author-supplied positioning, not an additional
 benchmark claim measured by this website. The disclosure uses native HTML and
 does not add JavaScript, animation or an external runtime dependency.

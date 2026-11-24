@@ -49,6 +49,12 @@ The source archive and figure hashes remain in `assets/media-manifest.json`. The
 
 Six selected scenes compare Stable3R, StreamVGGT, and ground truth with matched RGB inputs, sampled pixels, viewing parameters, and error-color scales. Rotate, pan, or zoom any panel to synchronize all three views. There is no automatic animation.
 
+Dragging rotates the visible surface in the pointer's direction (grab-to-rotate);
+arrow keys use the same direction. Shift/right-drag panning, wheel/pinch zoom,
+and Reset/Fit view retain their existing behavior. The control regression checks
+allow exactly six direction-mapping corrections against the original renderer hash;
+projection, shaders, sampling, cloud data and metrics remain unchanged.
+
 These are selected examples, not dataset-wide averages. The original three demos
 and their six raw metric files are unchanged. Three additional demos use fresh
 paired inference in `homepage_common_input_v2`: Apartment layout (10 frames),
@@ -79,8 +85,9 @@ does not add JavaScript, animation or an external runtime dependency.
 The page contains Abstract, Analysis, Method, 3D comparison, Results and Citation.
 Both cropped method videos play silently and loop using native browser controls.
 The Abstract is always visible, and the footer only credits the GLD layout.
-Experiment data and renderers are frozen in `scripts/content-identities.json`;
-the verifier also checks video hashes, relative paths and metadata hooks.
+Experiment data and original renderer identities are recorded in
+`scripts/content-identities.json`; the verifier permits only the six documented
+rotation direction fixes and also checks video hashes, relative paths and metadata hooks.
 
 All assets are served from this repository. `gld/` is kept synchronized with the
 root; `pvsm/` remains a separate earlier alternative and is not the homepage.

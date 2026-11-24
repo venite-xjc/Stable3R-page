@@ -4,6 +4,7 @@ import {resolve, dirname, join, relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {verifyCloudAssets} from './verify-clouds.mjs';
+import {verifyCloudControls, restoreOriginalControls} from './verify-cloud-controls.mjs';
 
 const root = resolve(process.argv[2] || join(dirname(fileURLToPath(import.meta.url)), '..'));
 const identities = JSON.parse(readFileSync(new URL('./content-identities.json', import.meta.url), 'utf8'));
@@ -14,6 +15,7 @@ const html = read('index.html');
 const data = json('assets/paper/results.json');
 const media = json('assets/media-manifest.json');
 const clouds = json('assets/clouds/manifest.json');
+const cloudControls = verifyCloudControls(read('clouds.js'));
 assert(existsSync(join(root, '.nojekyll')));
 assert.equal((html.match(/<h1>/g) || []).length, 1);
 assert.equal((html.match(/<img\b/g) || []).length, 5);
@@ -166,7 +168,8 @@ function inspect(dir) {
     assert(!/\.(?:pth|safetensors|zip|tar|gz)$/.test(name),'Non-website archive/model');
     if (stat.isDirectory()) inspect(file);
     else if (identities.files[ref]) {
-      assert.equal(sha(file),identities.files[ref],`Original experiment content changed: ${ref}`);
+      const digest = ref === 'clouds.js' ? createHash('sha256').update(restoreOriginalControls(read(ref))).digest('hex') : sha(file);
+      assert.equal(digest,identities.files[ref],`Original experiment content changed: ${ref}`);
       sharedFiles++;
     }
   }
@@ -174,4 +177,4 @@ function inspect(dir) {
 inspect(root);
 assert.equal(sharedFiles, Object.keys(identities.files).length, 'Missing original experiment content');
 assert(/\.method-video video\s*\{[^}]*border:\s*0;[^}]*border-radius:\s*0;/.test(read('styles.css')));
-console.log(JSON.stringify({status:'PASS',numericValues:333,paperFigures:5,pointCloudScenes:6,methodVideos:2,sections:headings,sharedFilesUnchanged:sharedFiles,originalRenderersUnchanged:true,videoAutoplayMutedLoop:true,videoBorder:false,externalRuntimeDependencies:0,standaloneRelativeAssets:true}));
+console.log(JSON.stringify({status:'PASS',numericValues:333,paperFigures:5,pointCloudScenes:6,methodVideos:2,sections:headings,frozenFilesVerified:sharedFiles,cloudControls,videoAutoplayMutedLoop:true,videoBorder:false,externalRuntimeDependencies:0,standaloneRelativeAssets:true}));

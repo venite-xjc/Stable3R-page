@@ -79,12 +79,12 @@
       const current={...old,x:e.clientX,y:e.clientY};
       if(pointerState.size===2){const other=[...pointerState.entries()].find(([id])=>id!==e.pointerId)[1];const before=Math.hypot(old.x-other.x,old.y-other.y),after=Math.hypot(current.x-other.x,current.y-other.y);if(after>1&&before>1)camera.distance=Math.max(.25,Math.min(150,camera.distance*before/after));pan((current.x-old.x)/2,(current.y-old.y)/2);}
       else if(old.button===2||old.shift){pan(current.x-old.x,current.y-old.y);}
-      else{camera.yaw+=(current.x-old.x)*.007;camera.pitch=Math.max(-1.5,Math.min(1.5,camera.pitch+(current.y-old.y)*.007));}
+      else{camera.yaw-=(current.x-old.x)*.007;camera.pitch=Math.max(-1.5,Math.min(1.5,camera.pitch-(current.y-old.y)*.007));}
       pointerState.set(e.pointerId,current);draw();
     });
     for(const event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,e=>pointerState.delete(e.pointerId));
     canvas.addEventListener('wheel',e=>{e.preventDefault();camera.distance=Math.max(.25,Math.min(150,camera.distance*Math.exp(Math.max(-200,Math.min(200,e.deltaY))*.0015)));draw();},{passive:false});
-    canvas.addEventListener('keydown',e=>{let handled=true;switch(e.key){case 'ArrowLeft':camera.yaw-=.12;break;case 'ArrowRight':camera.yaw+=.12;break;case 'ArrowUp':camera.pitch=Math.max(-1.5,camera.pitch-.1);break;case 'ArrowDown':camera.pitch=Math.min(1.5,camera.pitch+.1);break;case '+':case '=':camera.distance=Math.max(.25,camera.distance*.85);break;case '-':camera.distance=Math.min(150,camera.distance/ .85);break;case 'r':case 'R':reset();return;default:handled=false;}if(handled){e.preventDefault();draw();}});
+    canvas.addEventListener('keydown',e=>{let handled=true;switch(e.key){case 'ArrowLeft':camera.yaw+=.12;break;case 'ArrowRight':camera.yaw-=.12;break;case 'ArrowUp':camera.pitch=Math.min(1.5,camera.pitch+.1);break;case 'ArrowDown':camera.pitch=Math.max(-1.5,camera.pitch-.1);break;case '+':case '=':camera.distance=Math.max(.25,camera.distance*.85);break;case '-':camera.distance=Math.min(150,camera.distance/ .85);break;case 'r':case 'R':reset();return;default:handled=false;}if(handled){e.preventDefault();draw();}});
   }
   function metricMarkup(model){const m=scene.metrics[model];return `<span>Acc ↓ <strong>${(m.acc*100).toFixed(2)} cm</strong></span><span>Comp ↓ <strong>${(m.comp*100).toFixed(2)} cm</strong></span><span>NC ↑ <strong>${m.nc.toFixed(3)}</strong></span>`;}
   async function loadScene(id){

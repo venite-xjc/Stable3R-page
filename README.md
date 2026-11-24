@@ -63,7 +63,8 @@ stated protocols. No dataset-wide benchmark was rerun or changed.
 
 ## Main homepage layout
 
-A dark, initially collapsed News disclosure appears immediately before Abstract.
+A copper-header, initially collapsed News disclosure appears immediately before
+Abstract, with white header text and a white expanded body with dark text.
 It introduces the authors' follow-up ABot-Recon, contrasts ultra-long outdoor
 routes with Stable3R's bounded-spatial-area focus, and links the project homepage,
 technical report, evaluation branch, inference runtime and training branch.

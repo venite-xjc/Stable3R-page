@@ -56,6 +56,8 @@ assert(news, 'News must use a collapsed native disclosure');
 assert(html.indexOf('id="abot-news"') < html.indexOf('id="abstract"'), 'News must precede Abstract');
 assert(news[1].includes('100K-frame scale') && news[1].includes('ultra-long outdoor routes'));
 assert(news[1].includes('bounded spatial area') && news[1].includes('technical report'));
+assert(/\.news-card summary\s*\{[^}]*background:\s*#a46527;\s*color:\s*#fff;/.test(read('styles.css')), 'News header must be copper with white text');
+assert(/\.news-body\s*\{[^}]*background:\s*#fff;\s*color:\s*#242424;/.test(read('styles.css')), 'Expanded News must have a white background and dark text');
 for (const url of ['https://amap-cvlab.github.io/ABot-Recon-html/','https://arxiv.org/abs/2608.27529','https://github.com/amap-cvlab/ABot-Recon','https://github.com/amap-cvlab/ABot-Recon/tree/eval','https://github.com/amap-cvlab/ABot-Recon/tree/train']) assert(news[1].includes(`href="${url}" target="_blank" rel="noopener"`));
 assert(!html.includes('TL;DR') && !html.includes('summary-note'));
 assert(!html.includes('Details &amp; sources') && !html.includes('Protocol &amp; metrics'));

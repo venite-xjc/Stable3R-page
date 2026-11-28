@@ -53,6 +53,12 @@ assert(!html.includes('floating-toc'));
 assert(!html.includes('Oral'));
 assert(html.includes('<h2 id="abstract-title">Abstract</h2>'));
 assert(!html.includes('<summary>Abstract</summary>'));
+const abstractSource = JSON.parse(readFileSync(new URL('./abstract-camera-ready.json', import.meta.url), 'utf8'));
+const abstractSection = html.match(/<section\b[^>]*\bid="abstract"[^>]*>([\s\S]*?)<\/section>/);
+assert(abstractSection, 'Missing visible Abstract section');
+const abstractText = [...abstractSection[1].matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)]
+  .map(match => match[1].replace(/<[^>]*>/g, '')).join(' ').replace(/\s+/g, ' ').trim();
+assert.equal(abstractText, abstractSource.text, 'Abstract must match the camera-ready paper verbatim, not a shortened paraphrase');
 const news = html.match(/<details class="news-card" id="abot-news">([\s\S]*?)<\/details>/);
 assert(news, 'News must use a collapsed native disclosure');
 assert(html.indexOf('id="abot-news"') < html.indexOf('id="abstract"'), 'News must precede Abstract');
